@@ -1,0 +1,229 @@
+/* html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+} */
+
+
+/* @import url("root.css"); */
+
+.section {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section__container {
+    padding: 30px 0;
+    position: relative;
+}
+
+.section__container:nth-of-type(odd) {
+    background-color: #F4F4F8;
+}
+
+.section__container-header {
+    text-align: center;
+}
+
+.section__container-header h2 {
+    margin-bottom: 0;
+}
+
+.section__container-header div {
+    margin: 10px auto 40px auto;
+    height: 4px;
+    width: 190px;
+    background-color: var(--main-color-red);
+    display: block;
+}
+
+.section__container-header span {
+    position: absolute;
+    top: 55px;
+    right: 35px;
+    color: var(--main-color-red);
+}
+
+.section__container-header span a {
+    color: var(--main-color-red);
+    font-style: italic;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.section__container-header span i {
+    vertical-align: middle;
+}
+
+.section__container-row {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 100px;
+    flex-wrap: wrap;
+}
+
+.row__item {
+    flex-basis: 23%;
+}
+
+.row__item-image {
+    width: 100%;
+    overflow: hidden;
+}
+
+.row__item-image img {
+    display: block;
+    width: 100%;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.row__item-image img:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.row__item-content h3 {
+    margin: 10px auto 10px 0px;
+}
+
+.row__item-content h3 a {
+    text-decoration: none;
+    color: black;
+}
+
+.row__item-content h3 a:hover {
+    color: var(--main-color-red);
+}
+
+.row__item-content p {
+    text-align: justify;
+}
+
+.row__item p span {
+    padding-top: 50px;
+    color: var(--main-color-red);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.row__item--color {
+    margin-top: -10px;
+    color: var(--main-color-red);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.reveal {
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.back-to-top {
+    background-color: #C4C4C4;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color-red);
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+.back-to-top:hover {
+    background-color: #B8B8B8;
+}
+
+.back-to-top.active {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
+/* Desktop */
+
+@media screen and (max-width:1280px) {
+    .section__container-row {
+        margin: 0 50px;
+    }
+}
+
+
+/* Tablet */
+
+@media screen and (max-width:768px) {
+    .section__container-row {
+        margin: 0;
+    }
+    .row__item {
+        flex-basis: 45%;
+    }
+    .section__container-header span {
+        right: 18px;
+    }
+}
+
+
+/* Mobile */
+
+@media screen and (max-width:480px) {
+    .section__container-row {
+        margin: 0;
+    }
+    .row__item {
+        flex-basis: 45%;
+    }
+    .row__item-content h3 {
+        font-size: 14px;
+    }
+    .row__item-content p {
+        font-size: 12px;
+    }
+    .section__container-header h2 {
+        font-size: 16px;
+    }
+    .section__container-header div {
+        margin: 10px auto 40px auto;
+        height: 2px;
+        width: 90px;
+    }
+    .section__container-header span {
+        font-size: 11px;
+        top: 45px;
+        right: 3px;
+    }
+    .section__container-header span a {
+        margin-right: -4px;
+    }
+    .back-to-top {
+        width: 35px;
+        height: 35px;
+        bottom: 15px;
+        right: 15px;
+    }
+}

@@ -1,164 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
+<h4 class="sticky-top text-center title bg-warning">Product List</h4>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SG Foodie</title>
-    <link rel="stylesheet" href="./css/bodyStyles.css">
-    <link rel="stylesheet" href="./css/carousel.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="shortcut icon" type="image/jpg" href="./images/SGFoodie_LOGO1.png" />
-    <script src="./js/scriptHomepage.js" defer></script>
-    <script src="https://www.w3schools.com/lib/w3.js"></script>
-    <script src="./js/angular.min.js"></script>
-    <script src="./js/child_adult.js"></script>
-    <script>
-        let app = angular.module("angularApp", []);
-        app.controller("RestaurantController", function($scope, $http) {
-            $http({
-                method: "GET",
-                url: "./data/restaurants.json"
-            }).then(
-                function success(response) {
-                    $scope.restaurants = response.data;
-                    $scope.categories = ["Nổi bật", "Ưu đãi", "Văn hóa ẩm thực", "Tinh hoa Việt Nam", "Điểm nhấn quận mình"];
-                },
-                function error(response) {
-                    $scope.error = response.statusText;
-                });
-        })
-    </script>
-</head>
-
-<body ng-app="angularApp" ng-controller="RestaurantController">
-    <div w3-include-html="header.html "></div>
-    <!-- <audio id="my_audio" src="./data/background-music.mp3" loop="loop"></audio> -->
-    <!-- <audio autoplay loop preload="auto">
-        <source src="./data/background-music.mp3 " type="audio/mpeg">
-      </audio> -->
-    <div class="carousel-container">
-        <a class="slick-arrow slick-prev">
-            <i class="fas fa-angle-left"></i>
-        </a>
-        <div class="slick-list">
-            <div class="slick-track">
-                <div id="lastClone" class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
-                    <div>
-                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
-                            <img class="image" src="./images/Carousel/carousel_1.png" alt="">
-                        </a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-3 col-md-4" *ngFor="let r of restaurants">
+            <div class="card hover-shadow mb-3">
+                <div class="d-flex justify-content-between m-2">
+                    <div class="bg-warning d-flex align-items-center justify-content-center shadow-1-strong rounded-2" style="width: 55px; height: 25px;">
+                        <p class="text-white mb-0 small">-25%</p>
+                    </div>
+                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 25px; height: 25px;">
+                        <div class=" text-black">
+                            <i class="fa fa-heart text-danger"></i>
+                        </div>
                     </div>
                 </div>
-
-                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
-                    <div>
-                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
-                            <img class="image" src="./images/Carousel/carousel_1.png" alt="">
-                        </a>
+                <div class="card-image ">
+                    <img class="card-img-top" src="{{r.image[0]}}" alt="image"></div>
+                <div class="card-body">
+                    <h6 class="card-title text-truncate">{{r.title}}</h6>
+                    <h6 class="card-text text-danger">${{r.price}}</h6>
+                    <div class="d-flex justify-content-between text-secondary">
+                        <div class="d-flex">
+                            <div class="ms-auto text-warning">
+                                <i class="fa fa-star text-secondary"></i>
+                            </div>
+                            <!-- <p class="card-text ms-2">{{p.rating.rate}}</p> -->
+                        </div>
+                        <!-- <p class="card-text">Count: {{p.rating.count}}</p> -->
                     </div>
                 </div>
-                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
-                    <div>
-                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
-                            <img class="image" src="./images/Carousel/carousel_2.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
-                    <div>
-                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
-                            <img class="image" src="./images/Carousel/carousel_3.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
-                    <div>
-                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
-                            <img class="image" src="./images/Carousel/carousel_4.png" alt="">
-                        </a>
-                    </div>
-                </div>
-                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
-                    <div>
-                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
-                            <img class="image" src="./images/Carousel/carousel_5.png" alt="">
-                        </a>
-                    </div>
-                </div>
-
-                <div id="firstClone" class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
-                    <div>
-                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
-                            <img class="image" src="./images/Carousel/carousel_1.png" alt="">
-                        </a>
-                    </div>
-                </div>
+                <button class="btn btn-warning text-white m-2">Buy Now</button>
             </div>
         </div>
-        <a class="slick-arrow slick-next">
-            <i class="fas fa-angle-right"></i>
-        </a>
-        <ul class="slick-dots">
-            <li class="slick-active">
-                <button>1</button>
-            </li>
-            <li class="">
-                <button>2</button>
-            </li>
-            <li class="">
-                <button>3</button>
-            </li>
-            <li class="">
-                <button>4</button>
-            </li>
-            <li class="">
-                <button>5</button>
-            </li>
-        </ul>
     </div>
-    <script src="carousel.js"></script>
-    <script src="./js/carousel.js "></script>
-    <div w3-include-html="search-bar.html "></div>
-    <div class="section ">
-        <div class="section__container reveal " ng-repeat="cat in categories ">
-            <div class="section__container-header ">
-                <h2>{{cat | uppercase}}</h2>
-                <div></div>
-                <span>
-                        <a href="categoricalRestaurants.html?category={{cat}} " target="_blank ">Xem tất cả</a>
-                        <i class="material-icons ">chevron_right</i>
-                    </span>
-            </div>
-            <div class="section__container-row ">
-                <div class="row__item " ng-repeat="res in restaurants | filter:{category: cat} | limitTo:4 ">
-                    <div class="row__item-image ">
-                        <img src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} ">
-                    </div>
-                    <div class="row__item-content ">
-                        <h3>
-                            <a href="restaurantPage.html?restaurantId={{res.id}} " target="_blank ">{{res.name}}</a>
-                        </h3>
-                        <p>{{res.short_description}}</p>
-                        <p ng-if="cat=='Ưu đãi' " class="row__item--color ">{{res.discount}}</p>
-                    </div>
+</div>
+
+
+<!-- <div class="section">
+    <div class="section__container reveal">
+        <div class="section__container-row ">
+            <div class="row__item " *ngFor="let res of restaurants">
+                <div class="row__item-image ">
+                    <img src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} ">
+                </div>
+                <div class="row__item-content ">
+                    <h3>
+                        <a href="restaurantPage.html?restaurantId={{res.id}} " target="_blank ">{{res.name}}</a>
+                    </h3>
+                    <p>{{res.short_description}}</p>
+                    <p ng-if="cat=='Ưu đãi' " class="row__item--color ">{{res.discount}}</p>
                 </div>
             </div>
         </div>
     </div>
-    <a href="# " class="back-to-top ">
-        <i class="material-icons ">keyboard_arrow_up</i>
-    </a>
-    <div w3-include-html="footer.html "></div>
-    <script>
-        w3.includeHTML()
-    </script>
-    <script>
-        window.onload = function() {
-            document.getElementById("my_audio").play();
-        }
-    </script>
-</body>
+</div> -->
+<!-- <a href="# " class="back-to-top ">
+    <i class="material-icons ">keyboard_arrow_up</i>
+</a> -->
 
-</html>
+<!-- <ul *ngFor="let cat of categories">
+    <li>{{cat}}</li>
+</ul> -->
