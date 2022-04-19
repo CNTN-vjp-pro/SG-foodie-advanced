@@ -1,0 +1,15 @@
+<img src="./assets/images/policy-banner.png" class="w-100">
+<div class="content">
+    <ul class="ps-0" style="list-style-type: none;" *ngFor=" let p of policies ">
+        <li class="text-center fs-3 fw-bold mb-3">{{p.title}}</li>
+        <li *ngIf="p.precontent">{{p.precontent}}:</li>
+        <ul *ngFor="let c of p.body " class="m-3 ps-0">
+            <!--  <li style="text-align: justify;display:block ">
+                {{c.subtitle}}: {{c.content}}
+            </li> -->
+            <li style="text-align: justify;display:block ">
+                <span *ngIf="c.subtitle" class="fw-bold ">{{c.subtitle}}:</span> {{c.content}}
+            </li>
+        </ul>
+    </ul>
+</div>
