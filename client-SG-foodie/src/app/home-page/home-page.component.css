@@ -13,6 +13,7 @@ html {
 
 .section {
     width: 100%;
+    /* background-color: #B8B8B8; */
     margin: 0 auto;
 }
 
@@ -124,14 +125,16 @@ html {
     font-style: italic;
 }
 
-.reveal {
+
+/* .reveal {
     opacity: 0;
     transition: all 1.5s ease;
-}
+} */
 
-.reveal.active {
+
+/* .reveal.active {
     opacity: 1;
-}
+} */
 
 .back-to-top {
     background-color: #C4C4C4;
