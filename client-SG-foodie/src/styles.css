@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@fortawesome/fontawesome-free/css/fontawesome.min.css';
+:root {
+    --main-color-red: #D50805;
+    --main-color-yellow: #FFCF01;
+    --main-color-gray: #E0E0E0;
+    --main-color-footer: #E5E5E5;
+    --main-color-gray1-booking: rgb(192, 192, 192);
+    --main-color-gray2-booking: rgb(194, 194, 194);
+    --main-color-border: #C0C0C0;
+    --main-color-darkblue: #0E005A;
+    --main-color-placeholder: #8B8B8B;
+    --main-color-content: #676767;
+    --main-color-white-background: #F2F2F2;
+    --main-color-box-shadow: rgba(0, 0, 0, 0.25);
+}

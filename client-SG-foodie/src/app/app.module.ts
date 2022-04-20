@@ -8,12 +8,14 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SecurityPolicyPageComponent } from './security-policy-page/security-policy-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-	SecurityPolicyPageComponent
+	SecurityPolicyPageComponent,
+ NavigationBarComponent
   ],
   imports: [
     BrowserModule,
