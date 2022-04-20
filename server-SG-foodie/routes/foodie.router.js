@@ -2,11 +2,17 @@ const express = require('express')
 const router = express.Router()
 
 const Restaurant = require('../models/Restaurant')
-
+const Policy = require('../models/Policy');
 router.get('/', (req, res) => {
     res.send("It's seem ok")
 })
-
+router.get('/policies', (req, res) => {
+    Policy.find({})
+        .then(data => { res.json(data) })
+        .catch(error => {
+            res.json({ "Error:": error.message })
+        })
+})
 router.get('/restaurants', async(req, res) => {
     try {
         let restaurants = await Restaurant.find();
@@ -76,5 +82,4 @@ router.delete('/restaurants/:id', async(req, res) => {
         res.status(400).json({ message: err.message });
     }
 })
-
 module.exports = router

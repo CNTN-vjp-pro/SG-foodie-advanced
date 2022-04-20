@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IRestaurant } from 'interfaces/restaurants';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Policy } from '../models/policy';
 import { Restaurant } from '../models/restaurant';
 
 @Injectable({
@@ -37,4 +38,10 @@ export class FoodieService {
   deleteRestaurant(id: any){
     return this._http.delete(`${this.rest_API_URL}restaurants/${id}`, id)
   }
+  getPolicy():Observable<Policy[]>{
+	return this._http.get<Policy[]>(`${this.rest_API_URL}policies`).pipe(
+	  retry(2),
+	  catchError(this.errorHandler)
+	)
+	}
 }
