@@ -249,9 +249,6 @@ input[type=checkbox] {
     nav ul ul a {
         padding: 0px;
     }
-    .btn {
-        display: none;
-    }
     [id^=btn]:checked+ul {
         display: block;
     }
