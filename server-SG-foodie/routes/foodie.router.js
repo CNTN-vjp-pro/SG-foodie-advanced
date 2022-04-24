@@ -14,14 +14,22 @@ router.get('/policies', (req, res) => {
         })
 })
 router.get('/restaurants', async(req, res) => {
+        try {
+            let restaurants = await Restaurant.find();
+            res.json(restaurants)
+        } catch (err) {
+            res.json({ message: err.message })
+        }
+    })
+    //Get restaurant by Category
+router.get('/restaurants/:category', async(req, res) => {
     try {
-        let restaurants = await Restaurant.find();
-        res.json(restaurants)
+        let restaurant = await Restaurant.find({ category: req.params.category });
+        res.json(restaurant)
     } catch (err) {
         res.json({ message: err.message })
     }
 })
-
 router.get('/restaurants/:id', async(req, res) => {
     try {
         let restaurant = await Restaurant.findById(req.params.id);
