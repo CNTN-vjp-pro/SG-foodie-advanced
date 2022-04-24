@@ -1,21 +1,17 @@
 
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, RouterComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { SecurityPolicyPageComponent } from './security-policy-page/security-policy-page.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { CategoricalPageComponent } from './categorical-page/categorical-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
-	SecurityPolicyPageComponent,
- NavigationBarComponent
+	RouterComponent,
+ CategoricalPageComponent
   ],
   imports: [
     BrowserModule,
@@ -27,3 +23,4 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

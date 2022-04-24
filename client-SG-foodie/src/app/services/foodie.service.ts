@@ -22,6 +22,9 @@ export class FoodieService {
       catchError(this.errorHandler)
     )
   }
+  getRestaurantsListByCategory(category:any){
+	return this._http.get<IRestaurant[]>(`${this.rest_API_URL}restaurants/${category}`);
+  }
   errorHandler(err: HttpErrorResponse) {
     return throwError(() => new Error(err.message))
   }

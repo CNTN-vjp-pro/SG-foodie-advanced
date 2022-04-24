@@ -1,7 +1,7 @@
 <nav>
     <div class="logo">
-        <a href="homePage.html">
-            <img src="./assets/images/SGFoodie_LOGO1.png">
+        <a routerLink="/home-page">
+            <img src="assets/images/SGFoodie_LOGO1.png" alt="Unable to load image ">
         </a>
     </div>
     <label for="btn" class="icon-header">
@@ -9,37 +9,37 @@
     <input type="checkbox" id="btn">
     <ul>
         <li>
-            <a href="categoricalRestaurants.html?category=Nổi bật">Nổi bật</a>
+            <a routerLink="/category/Nổi bật">Nổi bật</a>
         </li>
         <li>
-            <a href="categoricalRestaurants.html?category=Ưu đãi">Ưu đãi</a>
+            <a routerLink="/category/Ưu đãi">Ưu đãi</a>
         </li>
-        <li class="foodList">
+        <li class="foodList ">
             <label for="btn-1" class="show">Văn hóa ẩm thực</label>
-            <a>Văn hóa ẩm thực</a>
+            <a routerLink="/category/Văn hóa ẩm thực">Văn hóa ẩm thực</a>
             <input type="checkbox" id="btn-1">
-            <ul class="traditionalFoodList">
-                <li><a>Kiểu Nhật</a></li>
-                <li><a>Kiểu Trung</a></li>
-                <li><a>Kiểu Âu</a></li>
-                <li><a>Kiểu Hàn</a></li>
+            <ul class="traditionalFoodList ">
+                <li><a routerLink="/category/Kiểu Nhật">Kiểu Nhật</a></li>
+                <li><a routerLink="/category/Kiểu Trung">Kiểu Trung</a></li>
+                <li><a routerLink="/category/Kiểu Âu">Kiểu Âu</a></li>
+                <li><a routerLink="/category/Kiểu Hàn">Kiểu Hàn</a></li>
             </ul>
         </li>
-        <li><a>Tinh hoa Việt Nam</a></li>
-        <li><a>Điểm nhấn quận mình</a></li>
+        <li><a routerLink="/category/Tinh hoa Việt Nam">Tinh hoa Việt Nam</a></li>
+        <li><a routerLink="/category/Điểm nhấn quận mình">Điểm nhấn quận mình</a></li>
         <li>
-            <button type="button" class="buttonLogin">Đăng nhập</button>
+            <button type="button" class="buttonLogin ">Đăng nhập</button>
+        </li>
+        <!--   <li>
+            <a href="# " id="language-selection " ng-show="lang==='vn' " ng-click="changeLanguage( 'en') ">VN</a>
         </li>
         <li>
-            <a href="#" id="language-selection" ng-show="lang === 'vn'" ng-click="changeLanguage('en')">VN</a>
-        </li>
-        <li>
-            <a href="#" id="language-selection" ng-show="lang === 'en'" ng-click="changeLanguage('vn')">EN</a>
-        </li>
+            <a href="# " id="language-selection " ng-show="lang==='en' " ng-click="changeLanguage( 'vn') ">EN</a>
+        </li> -->
     </ul>
 </nav>
 <script>
     $('.icon').click(function() {
-        $('span').toggleClass("cancel");
+        $('span').toggleClass("cancel ");
     });
 </script>
