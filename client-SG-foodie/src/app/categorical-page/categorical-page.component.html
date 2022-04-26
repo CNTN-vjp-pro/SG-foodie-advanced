@@ -22,7 +22,7 @@
 <div class="container ">
     <div class="restaurantRow " *ngFor="let res of restaurants ">
         <div>
-            <a target="_blank"><img class="restaurantImage " src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} "></a>
+            <a target="_blank" routerLink="/restaurants/{{res.name}}"><img class="restaurantImage " src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} "></a>
         </div>
         <div class="restaurantInfo ">
             <a class="restaurantName " target="_blank ">{{res.name}}</a>
