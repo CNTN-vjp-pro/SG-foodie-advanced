@@ -4,12 +4,13 @@ import { CategoricalPageComponent } from './categorical-page/categorical-page.co
 import { HomePageComponent } from './home-page/home-page.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { SecurityPolicyPageComponent } from './security-policy-page/security-policy-page.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 const routes: Routes = [
 	{path:'',redirectTo:'home-page',pathMatch:"full"},
 	{path:'home-page',component:HomePageComponent},
 	{path:'security-policy',component: SecurityPolicyPageComponent}, 
-	{path:'category/:category',component:CategoricalPageComponent}
-	
+	{path:'category/:category',component:CategoricalPageComponent},
+	{path:'**',component:PageNotFoundComponent}
 ];
 
 @NgModule({
@@ -17,4 +18,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent]
+export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,PageNotFoundComponent]

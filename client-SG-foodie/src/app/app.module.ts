@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { CategoricalPageComponent } from './categorical-page/categorical-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 	RouterComponent,
- CategoricalPageComponent
+ CategoricalPageComponent,
+ PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
