@@ -47,13 +47,13 @@
     </div>
     <div class="section__container reveal">
         <div class="section__container-row ">
-            <div class="row__item " *ngFor="let res of restaurants">
+            <div class="row__item" *ngFor="let res of restaurants">
                 <div class="row__item-image ">
                     <img src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} ">
                 </div>
                 <div class="row__item-content ">
                     <h3>
-                        <a href="restaurantPage.html?restaurantId={{res.id}} " target="_blank ">{{res.name}}</a>
+                        <a routerLink="/{{res._id}}" target="_blank ">{{res.name}}</a>
                     </h3>
                     <p>{{res.short_description}}</p>
                     <p ng-if="cat=='Ưu đãi' " class="row__item--color ">{{res.discount}}</p>

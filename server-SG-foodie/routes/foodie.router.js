@@ -14,12 +14,9 @@ router.get('/policies', (req, res) => {
         })
 })
 router.get('/restaurants', async(req, res) => {
-        try {
-            let restaurants = await Restaurant.find();
-            res.json(restaurants)
-        } catch (err) {
-            res.json({ message: err.message })
-        }
+        Restaurant.find({})
+            .then(data => { res.json(data) })
+            .catch(err => { res.json({ "Error": err.message }) })
     })
     //Get restaurant by Category
 router.get('/restaurants/:category', async(req, res) => {
@@ -30,10 +27,10 @@ router.get('/restaurants/:category', async(req, res) => {
         res.json({ message: err.message })
     }
 })
-router.get('/restaurants/:id', async(req, res) => {
+router.get('/:id', async(req, res) => {
     try {
-        let restaurant = await Restaurant.findById(req.params.id);
-        res.json(restaurant)
+        let data = await Restaurant.findById(req.params.id);
+        res.json(data)
     } catch (err) {
         res.json({ message: err.message })
     }
