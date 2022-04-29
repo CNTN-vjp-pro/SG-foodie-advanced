@@ -1,31 +1,12 @@
-<!-- <img class="banner" src="{{bannerSrc}}" alt="Unable to load image">
-<h2 class="heading">Những điểm đến thu hút thực khách tuần này</h2>
-<div class="container">
-    <div class="restaurantRow" ng-repeat="res in resList">
-        <div>
-            <a href="restaurantPage.html?restaurantId={{res.id}}" target="_blank"><img class="restaurantImage" src="{{res.image[0]}}" alt="Unable to load image" title="{{res.name}}"></a>
-        </div>
-        <div class="restaurantInfo">
-            <a class="restaurantName" target="_blank" href="restaurantPage.html?restaurantId={{res.id}}">{{res.name}}</a>
-            <p class="restaurantLocation">{{res.address[0].split(',')[2]}}</p>
-            <p class="restaurantShortDescription">{{res.short_description}}</p>
-            <div>
-                <a href="{{res.menu}}" target="_blank"><button type="button" class="btnCTA btnMenu">Menu</button></a>
-                <a href='bookingPage1.html?id={{res.id}}' target="_blank" class="btnCTA btnBookTable">Đặt ngay</a>
-            </div>
-        </div>
-    </div>
-</div>
-</div> -->
 <img class="banner" src="{{bannerSrc}}" alt="Unable to load image ">
 <h2 class="heading ">Những điểm đến thu hút thực khách tuần này</h2>
 <div class="container ">
     <div class="restaurantRow " *ngFor="let res of restaurants ">
         <div>
-            <a target="_blank" routerLink="/restaurants/{{res.name}}"><img class="restaurantImage " src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} "></a>
+            <a routerLink="/{{res._id}}" target="_blank"><img class="restaurantImage " src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} "></a>
         </div>
         <div class="restaurantInfo ">
-            <a class="restaurantName " target="_blank ">{{res.name}}</a>
+            <a class="restaurantName" routerLink="/{{res._id}}" target="_blank">{{res.name}}</a>
             <p class="restaurantLocation ">{{res.address[0].split(',')[2]}}</p>
             <p class="restaurantShortDescription ">{{res.short_description}}</p>
             <div>
