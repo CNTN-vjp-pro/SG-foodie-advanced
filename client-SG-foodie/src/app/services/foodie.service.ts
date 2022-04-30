@@ -15,13 +15,18 @@ export class FoodieService {
   constructor(private _http: HttpClient) { }
 
   getRestaurantsList(): Observable<IRestaurant[]> {
-    let API_URL = `${this.rest_API_URL}restaurants`
+    let API_URL = `${this.rest_API_URL}restaurants`;
     return this._http.get<IRestaurant[]>(API_URL)
     .pipe(
       retry(3),
       catchError(this.errorHandler)
     )
   }
+
+  getResById(_id:any): Observable<IRestaurant[]>{
+    return this._http.get<IRestaurant[]>(`${this.rest_API_URL}${_id}`);
+  }
+
   getRestaurantsListByCategory(category:any){
 	return this._http.get<IRestaurant[]>(`${this.rest_API_URL}restaurants/${category}`);
   }
