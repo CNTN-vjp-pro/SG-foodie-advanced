@@ -11,8 +11,8 @@ import { CategoricalPageComponent } from './categorical-page/categorical-page.co
   declarations: [
     AppComponent,
 	RouterComponent,
- CategoricalPageComponent
-  ],
+ CategoricalPageComponent,
+],
   imports: [
     BrowserModule,
     AppRoutingModule,
