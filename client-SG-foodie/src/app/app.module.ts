@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { CategoricalPageComponent } from './categorical-page/categorical-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RestaurantPageComponent } from './restaurant-page/restaurant-page.compo
 	RouterComponent,
  CategoricalPageComponent,
  PageNotFoundComponent,
- RestaurantPageComponent
+ RestaurantPageComponent,
+ FooterComponent
   ],
   imports: [
     BrowserModule,
