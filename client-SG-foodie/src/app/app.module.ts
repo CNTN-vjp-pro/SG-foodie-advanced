@@ -9,6 +9,8 @@ import { CategoricalPageComponent } from './categorical-page/categorical-page.co
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
 import { FooterComponent } from './footer/footer.component';
+import { BookingProgressbarStep1Component } from './booking-progressbar-step1/booking-progressbar-step1.component';
+import { BookingProgressbarStep2Component } from './booking-progressbar-step2/booking-progressbar-step2.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FooterComponent } from './footer/footer.component';
  CategoricalPageComponent,
  PageNotFoundComponent,
  RestaurantPageComponent,
- FooterComponent
+ FooterComponent,
+ BookingProgressbarStep1Component,
+ BookingProgressbarStep2Component
   ],
   imports: [
     BrowserModule,
