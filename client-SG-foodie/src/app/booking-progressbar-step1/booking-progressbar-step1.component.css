@@ -1,0 +1,34 @@
+.progresses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.line {
+    width: 200px;
+    height: 6px;
+    background-color: var(--main-color-yellow)
+}
+
+#non-active.line {
+    background-color: var(--main-color-gray);
+}
+
+.steps {
+    display: flex;
+    font-size: 14px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--main-color-gray);
+    color: white;
+}
+
+#active.steps,
+#completed.steps {
+    background-color: var(--main-color-yellow);
+}
