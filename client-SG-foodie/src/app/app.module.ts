@@ -11,6 +11,7 @@ import { RestaurantPageComponent } from './restaurant-page/restaurant-page.compo
 import { FooterComponent } from './footer/footer.component';
 import { BookingProgressbarStep1Component } from './booking-progressbar-step1/booking-progressbar-step1.component';
 import { BookingProgressbarStep2Component } from './booking-progressbar-step2/booking-progressbar-step2.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BookingProgressbarStep2Component } from './booking-progressbar-step2/bo
  RestaurantPageComponent,
  FooterComponent,
  BookingProgressbarStep1Component,
- BookingProgressbarStep2Component
+ BookingProgressbarStep2Component,
+ LoginPageComponent
   ],
   imports: [
     BrowserModule,
