@@ -1,0 +1,53 @@
+@import "../login-page/login-page.component.css";
+.input {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.user-name {
+    justify-content: space-evenly;
+}
+
+.user-name div input {
+    width: 140px;
+}
+
+.input input {
+    padding-left: 45px;
+    padding-right: 10px;
+}
+
+.input i {
+    position: absolute;
+    left: 16%;
+    top: 12%;
+}
+
+#accept-checkbox {
+    line-height: 20px;
+    text-align: left;
+    width: 350px;
+    align-self: center;
+    margin-top: 12px;
+}
+
+#accept-rules {
+    width: 30px;
+    margin-right: 25px;
+}
+
+#btn {
+    background-color: rgb(228, 11, 11);
+    color: #fff;
+    margin-top: 20px;
+}
+
+.slogan {
+    padding: 5px 12px;
+}
+
+form {
+    margin-top: 0px;
+    padding-top: 10px;
+}
