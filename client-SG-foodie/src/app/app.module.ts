@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BookingProgressbarStep1Component } from './booking-progressbar-step1/booking-progressbar-step1.component';
 import { BookingProgressbarStep2Component } from './booking-progressbar-step2/booking-progressbar-step2.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
  FooterComponent,
  BookingProgressbarStep1Component,
  BookingProgressbarStep2Component,
- LoginPageComponent
+ LoginPageComponent,
+ RegisterFormComponent
   ],
   imports: [
     BrowserModule,
