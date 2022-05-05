@@ -1,0 +1,56 @@
+/* html,
+body {
+    margin: 0;
+    padding: 0;
+} */
+
+
+/* @font-face {
+    font-family: NotoSans;
+    src: url(../data/font/Noto_Sans/NotoSans-Regular.ttf);
+}
+
+* {
+    font-family: NotoSans;
+} */
+
+body {
+    background-color: #F9F9F9 !important;
+}
+
+.container {
+    background: #FFFFFF;
+    width: 60%;
+    margin: 100px auto;
+    padding: 30px 45px;
+    border: 1px solid #AEAEAE;
+    text-align: justify;
+}
+
+
+/* Tablet */
+
+@media screen and (max-width:768px) {
+    .container {
+        width: 70%;
+        margin: 50px auto;
+    }
+}
+
+
+/* Mobile */
+
+@media screen and (max-width:480px) {
+    .container {
+        width: 80%;
+        padding: 10px;
+        margin: 30px auto;
+    }
+    .container h2 {
+        font-size: 15px;
+        text-align: center;
+    }
+    .container p {
+        font-size: 12px;
+    }
+}
