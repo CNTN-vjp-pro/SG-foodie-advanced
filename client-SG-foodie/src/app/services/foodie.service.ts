@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IRestaurant } from 'interfaces/restaurants';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Booking } from '../models/booking';
 import { Policy } from '../models/policy';
 import { Restaurant } from '../models/restaurant';
 
@@ -52,4 +53,9 @@ export class FoodieService {
 	  catchError(this.errorHandler)
 	)
 	}
+	//Booking
+	postBookingTable(data: Booking){
+		let API_URL = `${this.rest_API_URL}bookingTable`;
+		return this._http.post(API_URL, JSON.stringify(data))
+	  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Restaurant } from '../models/restaurant';
 import { FoodieService } from '../services/foodie.service';
@@ -6,7 +6,8 @@ import { FoodieService } from '../services/foodie.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomePageComponent implements OnInit {
 

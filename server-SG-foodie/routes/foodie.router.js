@@ -3,6 +3,7 @@ const router = express.Router()
 
 const Restaurant = require('../models/Restaurant')
 const Policy = require('../models/Policy');
+const Booking = require('../models/Booking');
 router.get('/', (req, res) => {
     res.send("It's seem ok")
 })
@@ -78,13 +79,32 @@ router.patch('/restaurants/:id', async(req, res) => {
 
 
 router.delete('/restaurants/:id', async(req, res) => {
-    try {
-        const id = req.params.id;
-        await Restaurant.findByIdAndDelete(id)
+        try {
+            const id = req.params.id;
+            await Restaurant.findByIdAndDelete(id)
 
-        res.json({ message: "success" })
+            res.json({ message: "success" })
+        } catch (err) {
+            res.status(400).json({ message: err.message });
+        }
+    })
+    //Booking 
+router.post('/bookingTable', async(req, res) => {
+    const booking = new Booking({
+        adultQuantity: req.body.adultQuantity,
+        childrenQuantity: req.body.childrenQuantity,
+        bookingDate: req.body.bookingDate,
+        bookingTime: req.body.bookingTime,
+        name: req.body.name,
+        email: req.body.email,
+        note: req.body.note
+    });
+    try {
+        const saveBooking = await booking.save();
+        console.log(saveBooking);
+        res.json({ message: "success" });
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.json({ message: err.message });
     }
 })
 module.exports = router
