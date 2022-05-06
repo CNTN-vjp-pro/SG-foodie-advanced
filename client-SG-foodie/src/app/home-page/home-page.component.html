@@ -1,4 +1,4 @@
-<h4 class="sticky-top text-center title bg-warning">Product List</h4>
+<!-- <h4 class="sticky-top text-center title bg-warning">Product List</h4>
 
 <div class="container-fluid">
     <div class="row">
@@ -24,28 +24,36 @@
                             <div class="ms-auto text-warning">
                                 <i class="fa fa-star text-secondary"></i>
                             </div>
-                            <!-- <p class="card-text ms-2">{{p.rating.rate}}</p> -->
                         </div>
-                        <!-- <p class="card-text">Count: {{p.rating.count}}</p> -->
                     </div>
                 </div>
                 <button class="btn btn-warning text-white m-2">Buy Now</button>
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
-<!-- <div class="section">
+
+
+<div class="section" *ngFor="let cat of categories">
+    <div class="section__container-header ">
+        <h2>{{cat | uppercase}}</h2>
+        <div></div>
+        <span>
+                <a href="categoricalRestaurants.html?category={{cat}} " target="_blank ">Xem tất cả</a>
+                <i class="material-icons ">chevron_right</i>
+            </span>
+    </div>
     <div class="section__container reveal">
         <div class="section__container-row ">
-            <div class="row__item " *ngFor="let res of restaurants">
+            <div class="row__item" *ngFor="let res of restaurants">
                 <div class="row__item-image ">
                     <img src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} ">
                 </div>
                 <div class="row__item-content ">
                     <h3>
-                        <a href="restaurantPage.html?restaurantId={{res.id}} " target="_blank ">{{res.name}}</a>
+                        <a routerLink="/{{res._id}}" target="_blank ">{{res.name}}</a>
                     </h3>
                     <p>{{res.short_description}}</p>
                     <p ng-if="cat=='Ưu đãi' " class="row__item--color ">{{res.discount}}</p>
@@ -53,11 +61,8 @@
             </div>
         </div>
     </div>
-</div> -->
-<!-- <a href="# " class="back-to-top ">
-    <i class="material-icons ">keyboard_arrow_up</i>
-</a> -->
+</div>
 
-<!-- <ul *ngFor="let cat of categories">
-    <li>{{cat}}</li>
+<!-- <ul *ngFor="let r of restaurants">
+    <li>{{r.name}}</li>
 </ul> -->
