@@ -55,7 +55,6 @@ export class FoodieService {
 	}
 	//Booking
 	postBookingTable(data: Booking){
-		let API_URL = `${this.rest_API_URL}bookingTable`;
-		return this._http.post(API_URL, JSON.stringify(data))
+		return this._http.post(`${this.rest_API_URL}bookingTable`,data);
 	  }
 }

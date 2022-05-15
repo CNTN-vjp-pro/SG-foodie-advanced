@@ -11,6 +11,6 @@ const BookingSchema = new Schema({
     name: { type: String, required: true },
     email: { type: String, required: true },
     note: { type: String }
- 
+
 })
 module.exports = mongoose.model("Booking", BookingSchema)
