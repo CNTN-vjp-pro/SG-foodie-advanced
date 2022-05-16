@@ -2,10 +2,11 @@
 body {
     margin: 0;
     padding: 0;
-}
+}*/
 
-html {
-    scroll-behavior: smooth;
+
+/* .body-container {
+    scroll-behavior: smooth;    
 } */
 
 
@@ -13,7 +14,6 @@ html {
 
 .section {
     width: 100%;
-    /* background-color: #B8B8B8; */
     margin: 0 auto;
 }
 
@@ -28,6 +28,7 @@ html {
 
 .section__container-header {
     text-align: center;
+    position: relative;
 }
 
 .section__container-header h2 {
@@ -44,8 +45,8 @@ html {
 
 .section__container-header span {
     position: absolute;
-    top: 55px;
-    right: 35px;
+    bottom: 0%;
+    right: 5%;
     color: var(--main-color-red);
 }
 
@@ -125,16 +126,14 @@ html {
     font-style: italic;
 }
 
-
-/* .reveal {
+.reveal {
     opacity: 0;
     transition: all 1.5s ease;
-} */
+}
 
-
-/* .reveal.active {
+.reveal.active {
     opacity: 1;
-} */
+}
 
 .back-to-top {
     background-color: #C4C4C4;
