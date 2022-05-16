@@ -93,8 +93,8 @@ router.post('/bookingTable', async(req, res) => {
     const booking = new Booking({
         adultQuantity: req.body.adultQuantity,
         childrenQuantity: req.body.childrenQuantity,
-        bookingDate: req.body.bookingDate.toString(),
-        bookingTime: req.body.bookingTime.toString(),
+        bookingDate: req.body.bookingDate,
+        bookingTime: req.body.bookingTime,
         name: req.body.name,
         email: req.body.email,
         note: req.body.note
