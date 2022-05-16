@@ -8,6 +8,7 @@ import { SecurityPolicyPageComponent } from './security-policy-page/security-pol
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
 const routes: Routes = [
 	{path:'',redirectTo:'home-page',pathMatch:"full"},
 	{path:'home-page',component:HomePageComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
 	{path:'about-us',component: AboutUsPageComponent}, 
 	{path:'category/:category',component:CategoricalPageComponent},
 	{path:'login', component:LoginPageComponent},
-	{path:':id',component:RestaurantPageComponent},
+	{path: 'register', component:RegisterFormComponent},
+	{path:'restaurant/:id',component:RestaurantPageComponent},
 	{path:'**',component:PageNotFoundComponent}
 ];
 

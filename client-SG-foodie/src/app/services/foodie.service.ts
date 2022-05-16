@@ -25,7 +25,7 @@ export class FoodieService {
   }
 
   getResById(_id:any): Observable<IRestaurant[]>{
-    return this._http.get<IRestaurant[]>(`${this.rest_API_URL}${_id}`);
+    return this._http.get<IRestaurant[]>(`${this.rest_API_URL}restaurant/${_id}`);
   }
 
   getRestaurantsListByCategory(category:any){
