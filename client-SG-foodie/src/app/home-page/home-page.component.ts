@@ -6,7 +6,9 @@ import { FoodieService } from '../services/foodie.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css',
+              '../../assets/additional-style/RestaurantStyle.css',
+              '../../assets/additional-style/carousel.css']
 })
 export class HomePageComponent implements OnInit {
 

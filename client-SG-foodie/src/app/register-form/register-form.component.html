@@ -1,50 +1,55 @@
-<form action="#">
+<!-- <div id="container">
     <div class="form-container">
-        <div class="logo">
-            <img src="../../assets/images/SGFoodie_LOGO1.png" alt="Logo Website">
-        </div>
-        <div class="slogan">
-            <p>SGFoodie sẽ cho bạn khám phá đến những ẩm thực ngon nhất của thành phố. Hãy bắt đầu nào!</p>
-        </div>
-        <div class="login-btn">
-            <button type="button" id="log-with-gg">
-                    <span><img src="../../assets/icon/google.svg" alt=""></span>
-                    <span><span>Đăng nhập với Google</span></span>
-                </button>
-        </div>
-        <div class="login-btn">
-            <button type="button" id="log-with-fb">
-                    <span><img src="../../assets/icon/facebook-icon.svg" alt=""></span>
-                    <span><span>Đăng nhập với Facebook</span></span>
-                </button>
-        </div>
+        <img src="../../assets/images/SGFoodie_LOGO1.png" alt="Logo SG-foodie" class="logo-header">
+        <p class="text-center">SGFoodie sẽ cho bạn khám phá đến những ẩm thực ngon nhất của thành phố. Hãy bắt đầu nào!</p>
+        <button class="btn btn-outline-secondary btn-signup mb-3">
+            <span><img src="../../assets/icon/google.svg" alt="GG-logo" class="logo-social"></span>
+            <span>Đăng nhập với Google</span>
+        </button>
+        <button class="btn btn-outline-secondary btn-signup mb-3">
+            <span><img src="../../assets/icon/facebook-icon.svg" alt="FB-logo" class="logo-social"></span>
+            <span>Đăng nhập với Facebook</span>
+        </button>
         <hr>
-        <div class="input user-name">
+        <form [formGroup]="regForm">
             <div>
-                <input type="text" name="fname" id="fname" placeholder="Họ">
-                <i class="bi bi-person-fill"></i>
+                <label for="username" class="form-label ms-3">Họ và tên</label>
+                <div>
+                    <div class="mb-3 col col-half col-pad">
+                        <input type="text" class="form-control" placeholder="Họ" id="username" formControlName="username" [class.is-invalid]="username.invalid && username.touched">
+                    </div>
+                    <div class="mb-3 col col-half col-pad-left">
+                        <input type="text" class="form-control" placeholder="Tên">
+                    </div>
+                </div>
             </div>
-            <div><input type="text" name="lname" id="lname" placeholder="Tên"></div>
-        </div>
-        <div class="input">
-            <input type="text" name="phone" id="phone" placeholder="+84 xxx xxx xxx">
-            <i class="bi bi-telephone-fill"></i>
-        </div>
-        <div class="input">
-            <input type="date" name="dob" id="dob">
-            <i class="bi bi-calendar-heart-fill"></i>
-        </div>
-        <div class="input">
-            <input type="text" name="email" id="email" placeholder="Địa chỉ Email">
-            <i class="bi bi-envelope-fill"></i>
-        </div>
-        <div class="input">
-            <input type="password" name="pwd" id="pwd" placeholder="Mật khẩu">
-            <i class="bi bi-unlock-fill"></i>
-        </div>
-        <div class="input accept-checkbox" id="accept-checkbox">
-            <input type="checkbox" name="accept-rules" id="accept-rules">Tôi đồng ý với Chính sách Bảo mật và Điều khoản & Điều kiện của SGFoodie​​
-        </div>
-        <div><button type="submit" id="btn">Đăng ký</button></div>
+            <div class="mb-3 row">
+                <label for="phone-num" class="form-label">Số điện thoại</label>
+                <input type="text" class="form-control" placeholder="+84" id="phone-num">
+            </div>
+            <div class="mb-3 row">
+                <label for="dob" class="form-label">Ngày sinh</label>
+                <input type="date" class="form-control" id="dob">
+            </div>
+            <div class="mb-3 row">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="example@gmail.com">
+            </div>
+            <div class="mb-3 row">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="password">
+            </div>
+            <div class="mb-3 row">
+                <label for="confirm-pwd" class="form-label">Nhập lại mật khẩu</label>
+                <input type="password" class="form-control" id="confirm-pwd">
+            </div>
+            <div class="mb-3 col">
+                <input type="checkbox">
+                <span class="col-pad-left">Tôi đồng ý với Chính sách Bảo mật và Điều khoản & Điều kiện của SGFoodie​​</span>
+            </div>
+            <div>
+                <button type="submit" class="btn-signup btn-submit">Đăng ký</button>
+            </div>
+        </form>
     </div>
-</form>
+</div> -->
