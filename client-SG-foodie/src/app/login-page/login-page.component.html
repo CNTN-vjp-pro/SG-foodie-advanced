@@ -1,33 +1,31 @@
-<body>
-    <form action="#">
-        <div class="form-container">
-            <div class="logo">
-                <a href="/"><img src="assets/images/SGFoodie_LOGO1.png" alt=""></a>
+<div id="container">
+    <div class="form-container">
+        <img src="../../assets/images/SGFoodie_LOGO1.png" alt="Logo SG-foodie" class="logo-header">
+        <p class="text-center">SGFoodie sẽ cho bạn khám phá đến những ẩm thực ngon nhất của thành phố. Hãy bắt đầu nào!</p>
+        <button class="btn btn-outline-secondary btn-signup mb-3">
+            <span><img src="../../assets/icon/google.svg" alt="GG-logo" class="logo-social"></span>
+            <span>Đăng nhập với Google</span>
+        </button>
+        <button class="btn btn-outline-secondary btn-signup mb-3">
+            <span><img src="../../assets/icon/facebook-icon.svg" alt="FB-logo" class="logo-social"></span>
+            <span>Đăng nhập với Facebook</span>
+        </button>
+        <hr>
+        <form>
+            <div class="mb-3 row">
+                <label for="phone-num" class="form-label">Email hoặc số điện thoại</label>
+                <input type="text" class="form-control" id="phone-num">
             </div>
-            <div class="title">
-                <h1>Đăng Nhập</h1>
+            <div class="mb-3 row">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="password">
             </div>
-            <div class="login-btn">
-                <button type="button" id="log-with-gg">
-                    <span><img src="../../assets/icon/google.svg" alt=""></span>
-                    <span><span>Đăng nhập với Google</span></span>
-                </button>
+            <div class="mb-3 text-right">
+                <a href="#">Quên mật khẩu?</a>
             </div>
-            <div class="login-btn">
-                <button type="button" id="log-with-fb">
-                    <span><img src="../../assets/icon/facebook-icon.svg" alt=""></span>
-                    <span><span>Đăng nhập với Facebook</span></span>
-                </button>
+            <div>
+                <button type="submit" class="btn-signup btn-submit">Đăng nhập</button>
             </div>
-            <hr>
-            <div class="input"><input type="text" name="user-name" id="user-name" placeholder="Email hoặc số điên thoại" required></div>
-            <div class="input"><input type="password" name="pwd" id="pwd" placeholder="Mật khẩu" required></div>
-            <div class="forgot-pwd"><a href="">Quên mật khẩu?</a></div>
-
-            <div><button type="submit" id="btn">Đăng nhập</button></div>
-            <div class="register">
-                Chưa có tài khoản? <span><a id="register" href="register.html">Đăng ký</a></span>
-            </div>
-        </div>
-    </form>
-</body>
+        </form>
+    </div>
+</div>
