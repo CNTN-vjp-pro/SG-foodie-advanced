@@ -79,3 +79,14 @@
 .btn-submit:hover {
     opacity: 0.9;
 }
+
+@media screen and (max-width: 900px) {
+    .background-img {
+        display: none;
+    }
+    .form-container {
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
