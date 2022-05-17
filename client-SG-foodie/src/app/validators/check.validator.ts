@@ -1,4 +1,4 @@
-import { AbstractControl, ControlContainer, ValidatorFn } from "@angular/forms";
+import { AbstractControl, ControlContainer, ValidatorFn, Validators } from "@angular/forms";
 
 // export function customValidator(control: AbstractControl): {[key:string]: any} | null {
 //     const check = /\@|\#|\$|\%|\^|\&/g.test(control.value)
@@ -12,6 +12,13 @@ export function customValidator(regex: RegExp): ValidatorFn{
         return matchName ? {'nameNoMatch': {value: control.value}} : null;
     }
 }
+
+// export class CustomValidators {
+//     static phoneNumber(countryPhoneCode = '*'): ValidatorFn {
+//       return Validators.pattern('([+]'+ countryPhoneCode + ')?([0-9]{9,12})$');
+//     }
+  
+//   }
 
 export function passwordValidator(control: AbstractControl): {[key:string]: any} | null {
    const pass = control.get('pass');
