@@ -24,29 +24,37 @@
                     <input formControlName="childrenQuantity" id="childrenQuantity" type="number" min="0" max="10" class="form-control">
                 </div>
             </div>
-            <div class="row mb-2">
+            <!--   <div class="row mb-2">
                 <div class="col-md-6">
                     <label for="bookingDate">Ngày đặt bàn</label>
                 </div>
-                <div class="col-md-6">
-                    <label for="bookingTime">Thời gian</label>
-                </div>
+
             </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <input formControlName="bookingDate" id="bookingDate" type="date" class="form-control" [class.is-invalid]="bookingForm.controls['bookingDate'].invalid && bookingForm.controls['bookingDate'].touched ">
+            <div class="row mb-3"> -->
+
+            <!--  <input formControlName="bookingDate" id="bookingDate" type="date" class="form-control" [class.is-invalid]="bookingForm.controls['bookingDate'].invalid && bookingForm.controls['bookingDate'].touched ">
                     <div *ngIf="bookingForm.controls['bookingDate'].invalid && bookingForm.controls['bookingDate'].touched ">
                         <small class="text-danger" *ngIf="bookingForm.controls['bookingDate'].errors?.['required']">Vui lòng chọn ngày đặt bàn</small>
-                    </div>
-                </div>
-                <div class="col-md-6">
+                    </div> -->
+
+
+            <!--  <div class="col-md-6">
                     <input formControlName="bookingTime" id="bookingTime" type="time" range="" class="form-control" [class.is-invalid]="bookingForm.controls['bookingTime'].invalid && bookingForm.controls['bookingTime'].touched ">
                     <div *ngIf="bookingForm.controls['bookingTime'].invalid && bookingForm.controls['bookingTime'].touched ">
                         <small class="text-danger" *ngIf="bookingForm.controls['bookingTime'].errors?.['required']">Vui lòng chọn thời gian đặt bàn</small>
                     </div>
                 </div>
-            </div>
+             </div> -->
             <div class="row">
+                <div class="mb-2">
+                    <label>Thời gian đặt bàn</label>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <input type="datetime-local" formControlName="bookingDate" id="bookingDate" class="form-control" [class.is-invalid]="bookingForm.controls['bookingDate'].invalid && bookingForm.controls['bookingDate'].touched ">
+                    <div *ngIf="bookingForm.controls['bookingDate'].invalid && bookingForm.controls['bookingDate'].touched ">
+                        <small class="text-danger" *ngIf="bookingForm.controls['bookingDate'].errors?.['required']">Vui lòng chọn ngày đặt bàn</small>
+                    </div>
+                </div>
                 <div class="col-md-12 mb-3">
                     <input formControlName="name" id="name" type="text" class="form-control" placeholder="Họ và tên" [class.is-invalid]="bookingForm.controls['name'].invalid && bookingForm.controls['name'].touched ">
                     <div *ngIf="bookingForm.controls['name'].invalid && bookingForm.controls['name'].touched ">
@@ -85,44 +93,3 @@
             </div>
         </form>
     </div>
-    <!-- <div class="booking-container booking-container-flex ">
-    <div class="header-container ">
-        <div class="restaurant-info ">
-            <img class="restaurant-image " src="{{restaurant.image[0]}} ">
-            <h3>{{restaurant.name}}</h3>
-            <p class="opening-hours ">Giờ mở cửa: <span>{{restaurant.time}}</span></p>
-        </div>
-    </div>
-    <div class="form-container ">
-        <form method="get ">
-            <div class="booking-confirm ">
-                Chúng tôi có một bàn cho bạn tại nhà hàng {{restaurant.name}} cho [số người] người lúc [giờ], [ngày]
-            </div>
-            <div>
-                <select class="gender confirm-style " >
-		<option value="Mr ">Ông</option>
-		<option value="Mrs ">Bà</option>
-	</select>
-                    <img class="icon " src="assets/images/icon/user.svg " alt=" ">
-                </div>
-                <div>
-                    <input type="text " placeholder="Họ và tên " name="fullname " class="confirm-infor confirm-style " >
-                    <img class="infor-icon " src="assets/images/icon/user.svg " alt=" ">
-                </div>
-                <div>
-                    <input type="text " placeholder="Email " name="email " class="confirm-infor confirm-style " required>
-                    <img class="infor-icon " src="assets/images/icon/email.svg " alt=" ">
-                </div>
-                <div>
-                    <input type="text " placeholder="Số điện thoại " class="confirm-infor confirm-style " required>
-                    <img class="infor-icon " src="assets/images/icon/phone.svg " alt=" ">
-                </div>
-                <div>
-                    <textarea cols="30 " rows="2 " class="confirm-infor confirm-style-note " placeholder="Ghi chú "></textarea>
-                    <img class="infor-icon-note " src="assets/images/icon/note.svg " alt=" ">
-                </div>
-                <button class="booking-submit-button "><a href="bookingPage3.html?id={{restaurant.id}} ">Xác nhận</a></button>
-                    </form>
-                </div>
-                <p class="booking-fontsize ">© 2021 - Bản quyền của Công Ty Cổ Phần SGFoodie - SGFoodie.vn</p>
-            </div> -->

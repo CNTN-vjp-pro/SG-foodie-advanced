@@ -94,7 +94,6 @@ router.post('/bookingTable', async(req, res) => {
         adultQuantity: req.body.adultQuantity,
         childrenQuantity: req.body.childrenQuantity,
         bookingDate: req.body.bookingDate,
-        bookingTime: req.body.bookingTime,
         name: req.body.name,
         email: req.body.email,
         note: req.body.note

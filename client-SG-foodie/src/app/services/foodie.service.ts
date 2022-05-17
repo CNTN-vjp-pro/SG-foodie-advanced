@@ -57,4 +57,10 @@ export class FoodieService {
 	postBookingTable(data: Booking){
 		return this._http.post(`${this.rest_API_URL}bookingTable`,data);
 	  }
+	  getBookingTable():Observable<Booking[]>{
+		return this._http.get<Booking[]>(`${this.rest_API_URL}bookingTable/appointment`).pipe(
+		  retry(2),
+		  catchError(this.errorHandler)
+		)
+		}
 }

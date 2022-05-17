@@ -29,7 +29,6 @@ public bookingForm:any;
 		adultQuantity:['',[Validators.required]],
 		childrenQuantity:[,[Validators.required]],
 		bookingDate:['',[Validators.required]],
-		bookingTime:['',[Validators.required]],
 		name:['',[Validators.required]],
 		email:['',[Validators.email,Validators.required]],
 		phoneNumber:['',[Validators.required,Validators.pattern("[0-9_-]{10,12}")]],
