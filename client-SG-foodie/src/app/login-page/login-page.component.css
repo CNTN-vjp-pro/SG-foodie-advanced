@@ -35,14 +35,15 @@
     position: relative;
 }
 
+.background-img {
+    width: calc(100% - 450px);
+    position: fixed;
+}
+
 .form-container {
     position: absolute;
-    /* display: inline-block; */
     top: 0px;
-    left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
     padding: 20px;
     width: 450px;
     border: 1px solid rgb(204, 204, 204);
