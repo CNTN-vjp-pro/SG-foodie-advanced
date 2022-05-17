@@ -1,4 +1,7 @@
 <div id="container">
+    <div>
+        <img src="../../assets/images/register-img.jpg" alt="" class="background-img">
+    </div>
     <div class="form-container">
         <img src="../../assets/images/SGFoodie_LOGO1.png" alt="Logo SG-foodie" class="logo-header">
         <p class="text-center">SGFoodie sẽ cho bạn khám phá đến những ẩm thực ngon nhất của thành phố. Hãy bắt đầu nào!</p>
@@ -38,7 +41,7 @@
                 <label for="phonenum" class="form-label">Số điện thoại</label>
                 <input type="text" class="form-control" placeholder="+84" id="phonenum" required formControlName="phonenum" [class.is-invalid]="phonenum.invalid && phonenum.touched">
                 <div *ngIf="phonenum.invalid && phonenum.touched">
-                    <small class="text-danger" *ngIf="phonenum.errors?.['required']">Phone nuber is invalid</small>
+                    <small class="text-danger" *ngIf="phonenum.errors?.['required']">Phone number is invalid</small>
                     <small class="text-danger" *ngIf="phonenum.errors?.['pattern']">Mobile phone must contain 10 digit</small>
                 </div>
             </div>
