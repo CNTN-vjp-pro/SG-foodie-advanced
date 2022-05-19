@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AboutUs } from 'interfaces/aboutUs';
 import { IRestaurant } from 'interfaces/restaurants';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { Booking } from '../models/booking';
@@ -25,7 +26,7 @@ export class FoodieService {
   }
 
   getResById(_id:any): Observable<IRestaurant[]>{
-    return this._http.get<IRestaurant[]>(`${this.rest_API_URL}${_id}`);
+    return this._http.get<IRestaurant[]>(`${this.rest_API_URL}restaurant/${_id}`);
   }
 
   getRestaurantsListByCategory(category:any){
@@ -63,4 +64,10 @@ export class FoodieService {
 		  catchError(this.errorHandler)
 		)
 		}
+  getAboutUs():Observable<AboutUs[]>{
+    return this._http.get<AboutUs[]>(`${this.rest_API_URL}aboutus`).pipe(
+      retry(2),
+      catchError(this.errorHandler)
+    )
+  }
 }

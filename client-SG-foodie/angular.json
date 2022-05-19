@@ -32,12 +32,16 @@
                         "styles": [
                             "src/styles.css",
                             "node_modules/bootstrap/dist/css/bootstrap.min.css",
-                            "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+                            "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+                            "node_modules/bootstrap-icons/font/bootstrap-icons.css"
                         ],
                         "scripts": [
                             "node_modules/jquery/dist/jquery.min.js",
                             "node_modules/bootstrap/dist/js/bootstrap.min.js",
-                            "node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js"
+                            "node_modules/@fortawesome/fontawesome-free/js/fontawesome.min.js",
+                            "src/assets/additional-js/carousel.js",
+                            "src/assets/additional-js/child_adult.js",
+                            "src/assets/additional-js/scriptHomepage.js"
                         ]
                     },
                     "configurations": {
