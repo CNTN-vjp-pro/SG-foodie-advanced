@@ -17,13 +17,6 @@ import { LoginPageComponent } from './login-page/login-page.component';
   declarations: [
     AppComponent,
 	RouterComponent,
- CategoricalPageComponent,
- PageNotFoundComponent,
- RestaurantPageComponent,
- FooterComponent,
- BookingProgressbarStep1Component,
- BookingProgressbarStep2Component,
- LoginPageComponent
   ],
   imports: [
     BrowserModule,

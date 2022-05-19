@@ -1,63 +1,6 @@
-<!-- <html>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-
-<head>
-    <script>
-        function get_value(...params) {
-            var adults = document.getElementById(params[0]);
-            var childrens = document.getElementById(params[1]);
-
-            document.getElementById(params[2]).value = adults[adults.selectedIndex].value + ' người lớn, ' + childrens[childrens.selectedIndex].value + ' trẻ em';
-
-        }
-
-        function toggle_visibility(id) {
-            var e = document.getElementById(id);
-            if (e.style.display == 'block')
-                e.style.display = 'none';
-            else
-                e.style.display = 'block';
-        }
-    </script>
-    <script>
-        let urlparams = new URLSearchParams(location.search);
-        var id = urlparams.get('restaurantId');
-    </script>
-    <script>
-        let app = angular.module("angularApp", []);
-        app.controller("DetailController", function($scope, $http, $sce) {
-            $http({
-                method: "GET",
-                url: "../"
-            }).then(
-                function success(response) {
-                    $scope.selectedRes = response.data.find(value => value.id == id);
-
-                    $scope.cmtList = $scope.selectedRes.cmt;
-
-                    $scope.resList = response.data;
-
-                    // trust src to render map
-                    $scope.trustSrc = function(src) {
-                        return $sce.trustAsResourceUrl(src);
-                    }
-                },
-                function error(response) {
-                    $scope.error = response.statusText;
-                })
-        })
-    </script>
-</head>
-
-<body ng-app="angularApp" ng-controller="DetailController"> -->
-<!-- <div class="container"> -->
 <div>
     <div class="search-container">
         <div class="searchbar-box">
-            <!-- <i class="bi bi-search" style="color:white; font-size: 40px;"></i> -->
             <i class="fa-solid fa-magnifying-glass" style="color:white; font-size: 40px;"></i>
             <input type="text" class="search-box" placeholder="Tìm địa điểm nhà hàng, món ăn...">
         </div>
@@ -68,45 +11,47 @@
                 <img src="{{restaurant.image[1]}}" alt="" class="restaurant-image">
                 <p class="restaurant-name">{{restaurant.name}}</p>
             </div>
-            <div class="booking-check">
-                <div class="search-item">
-                    <input type="text" name="" id="number-of-cus" placeholder="2 người lớn" class="box-checking" readonly>
-                    <img class="icon" src="../data/icon/user.svg" alt="" onclick="toggle_visibility('dropdown')">
-                    <div id="dropdown" class="cus-dropdown cus-flex">
-                        <div class="input-group">
-                            <label for="adults" class="maxwidth-option">Người lớn</label>
-                            <select id="adults" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
-                        <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                    </select>
-                        </div>
-                        <div class="input-group">
-                            <label for="childrens" class="maxwidth-option">Trẻ em</label>
-                            <select id="childrens" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
+            <form action="" class="form-style">
+                <div class="booking-check" style="width: 100%; color: #e5e5e5; margin-top: 0; margin-bottom: 10px;">
+                    <div class="search-item">
+                        <input type="text" name="" id="number-of-cus" placeholder="2 người lớn" class="box-checking" readonly>
+                        <img class="icon" src="assets/icon/user.svg" alt="" onclick="toggle_visibility('dropdown')">
+                        <div id="dropdown" class="cus-dropdown cus-flex">
+                            <div class="input-group" style="justify-content: space-around;">
+                                <label for="adults" class="maxwidth-option" style="padding-right: 5px; color: #000;">Người lớn:</label>
+                                <select id="adults" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
+                                <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                            </select>
+                            </div>
+                            <div class="input-group" style="justify-content: space-around;">
+                                <label for="childrens" class="maxwidth-option" style="padding-right: 30px; color: #000;">Trẻ em:</label>
+                                <select id="childrens" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            </div>
                         </div>
                     </div>
+                    <div>
+                        <input type="date" class="box-checking date-adjust">
+                    </div>
+                    <div>
+                        <input type="time" class="box-checking time-adjust">
+                    </div>
+                    <div>
+                        <a routerLink="/booking-page/{{restaurant._id}}" target="_blank"> <button class="booknow-button">Đặt ngay</button></a>
+                    </div>
                 </div>
-                <div>
-                    <input type="date" class="box-checking date-adjust">
-                </div>
-                <div>
-                    <input type="time" class="box-checking time-adjust">
-                </div>
-                <div>
-                    <button class="booknow-button">Đặt ngay</button>
-                </div>
-            </div>
+            </form>
             <div class="detailed-container">
                 <div class="detailed-column">
                     <div class="detailed-row">
@@ -181,19 +126,17 @@
         </div>
 
         <div>
-            <div>
-                <div class="recommend-container">
-                    <div class="recommend-header">
-                        <p class="recommend-title"> Có thể bạn thích</p>
-                    </div>
-                    <div class="recommend-inside-container" *ngFor="let r of restaurants.slice(0, 5)">
-                        <img src="{{r.image[0]}}" alt="{{r.name}}" class="small-image">
-                        <a routerLink="/{{r._id}}" class="recommend-name" target="_blank">
-                            <p>{{r.name}}</p>
-                        </a>
-                        <p class="recommend-content">{{r.short_description}}</p>
-                        <br>
-                    </div>
+            <div class="recommend-container">
+                <div class="recommend-header">
+                    <p class="recommend-title"> Có thể bạn thích</p>
+                </div>
+                <div class="recommend-inside-container" *ngFor="let r of restaurants.slice(0, 5)">
+                    <img src="{{r.image[0]}}" alt="{{r.name}}" class="small-image">
+                    <a routerLink="/restaurant/{{r._id}}" class="recommend-name" target="_blank">
+                        <p>{{r.name}}</p>
+                    </a>
+                    <p class="recommend-content">{{r.short_description}}</p>
+                    <br>
                 </div>
             </div>
         </div>

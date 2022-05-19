@@ -13,13 +13,6 @@ export function customValidator(regex: RegExp): ValidatorFn{
     }
 }
 
-// export class CustomValidators {
-//     static phoneNumber(countryPhoneCode = '*'): ValidatorFn {
-//       return Validators.pattern('([+]'+ countryPhoneCode + ')?([0-9]{9,12})$');
-//     }
-  
-//   }
-
 export function passwordValidator(control: AbstractControl): {[key:string]: any} | null {
    const pass = control.get('pass');
    const confirmPass = control.get('confirmPass');
@@ -28,3 +21,5 @@ if ((pass && pass.pristine)  || (confirmPass && confirmPass.pristine)){
 }
    return pass && confirmPass && pass.value !== confirmPass.value ? {misMatch: true} : null
 }
+
+

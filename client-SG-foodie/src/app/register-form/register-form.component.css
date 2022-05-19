@@ -1,0 +1,76 @@
+/* Common */
+
+.col {
+    float: left;
+}
+
+.col-pad-left {
+    padding-left: 8px;
+}
+
+.row {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 8px;
+    padding-right: 8px; */
+}
+
+.col-half {
+    width: 50%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+/* Container */
+
+#container {
+    position: relative;
+}
+
+.form-container {
+    position: absolute;
+    /* display: inline-block; */
+    top: 0px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 450px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.logo-header {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+.logo-social {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.btn-signup {
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+
+.btn-submit {
+    border: none;
+    background-color: #D50805;
+    height: 40px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
