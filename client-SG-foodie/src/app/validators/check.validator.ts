@@ -1,4 +1,4 @@
-import { AbstractControl, ControlContainer, ValidatorFn } from "@angular/forms";
+import { AbstractControl, ControlContainer, ValidatorFn, Validators } from "@angular/forms";
 
 // export function customValidator(control: AbstractControl): {[key:string]: any} | null {
 //     const check = /\@|\#|\$|\%|\^|\&/g.test(control.value)
@@ -21,3 +21,5 @@ if ((pass && pass.pristine)  || (confirmPass && confirmPass.pristine)){
 }
    return pass && confirmPass && pass.value !== confirmPass.value ? {misMatch: true} : null
 }
+
+
