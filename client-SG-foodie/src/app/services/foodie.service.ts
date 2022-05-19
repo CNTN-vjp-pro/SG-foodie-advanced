@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AboutUs } from 'interfaces/aboutUs';
 import { IRestaurant } from 'interfaces/restaurants';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Booking } from '../models/booking';
 import { Policy } from '../models/policy';
 import { Restaurant } from '../models/restaurant';
 
@@ -53,6 +54,16 @@ export class FoodieService {
 	  catchError(this.errorHandler)
 	)
 	}
+	//Booking
+	postBookingTable(data: Booking){
+		return this._http.post(`${this.rest_API_URL}bookingTable`,data);
+	  }
+	  getBookingTable():Observable<Booking[]>{
+		return this._http.get<Booking[]>(`${this.rest_API_URL}bookingTable/appointment`).pipe(
+		  retry(2),
+		  catchError(this.errorHandler)
+		)
+		}
   getAboutUs():Observable<AboutUs[]>{
     return this._http.get<AboutUs[]>(`${this.rest_API_URL}aboutus`).pipe(
       retry(2),
