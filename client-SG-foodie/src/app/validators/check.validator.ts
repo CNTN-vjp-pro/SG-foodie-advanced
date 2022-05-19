@@ -28,3 +28,5 @@ if ((pass && pass.pristine)  || (confirmPass && confirmPass.pristine)){
 }
    return pass && confirmPass && pass.value !== confirmPass.value ? {misMatch: true} : null
 }
+
+

@@ -12,6 +12,11 @@ body {
 
 /* @import url("root.css"); */
 
+nav,
+.footer {
+    display: block;
+}
+
 .section {
     width: 100%;
     margin: 0 auto;

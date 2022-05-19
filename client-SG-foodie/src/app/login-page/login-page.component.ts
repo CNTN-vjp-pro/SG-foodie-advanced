@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { customValidator, passwordValidator } from '../validators/check.validator';
 
 @Component({
   selector: 'app-login-page',
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  public regForm: any;
+
+  constructor(private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.regForm = this._formBuilder.group({
+        phonenum: ['', [Validators.required, Validators.pattern("^((\\+84-?)|0)?[0-9]{10}$")]],
+        pass: [''],
+      }, {validators: [passwordValidator]})
+  }
+
+  get phonenum(){
+    return this.regForm.controls['phonenum'];
   }
 
 }
