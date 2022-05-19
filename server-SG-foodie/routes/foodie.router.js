@@ -94,21 +94,22 @@ router.delete('/restaurants/:id', async(req, res) => {
     })
     //Booking table
 router.post('/bookingTable', async(req, res) => {
-    const booking = new Booking({
-        adultQuantity: req.body.adultQuantity,
-        childrenQuantity: req.body.childrenQuantity,
-        bookingDate: req.body.bookingDate,
-        name: req.body.name,
-        email: req.body.email,
-        note: req.body.note
-    });
-    try {
-        const saveBooking = await booking.save();
-        console.log(saveBooking);
-        res.json({ message: "success" });
-    } catch (err) {
-        res.json({ message: err.message });
-    }
+        const booking = new Booking({
+            adultQuantity: req.body.adultQuantity,
+            childrenQuantity: req.body.childrenQuantity,
+            bookingDate: req.body.bookingDate,
+            name: req.body.name,
+            email: req.body.email,
+            note: req.body.note
+        });
+        try {
+            const saveBooking = await booking.save();
+            console.log(saveBooking);
+            res.json({ message: "success" });
+        } catch (err) {
+            res.json({ message: err.message });
+        }
+    })
     //Get about us
 router.get('/aboutus', (req, res) => {
     AboutUs.find({})
@@ -122,4 +123,5 @@ router.get('/bookingTable/appointment', async(req, res) => {
         .then(data => { res.json(data) })
         .catch(err => { res.json({ "Error": err.message }) })
 })
+
 module.exports = router
