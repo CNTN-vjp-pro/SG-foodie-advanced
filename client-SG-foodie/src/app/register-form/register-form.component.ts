@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { customValidator, passwordValidator } from '../validators/check.validator';
+// import { customValidator, passwordValidator } from '../validators/check.validator';
 
 @Component({
   selector: 'app-register-form',
