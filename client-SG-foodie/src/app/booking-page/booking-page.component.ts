@@ -33,14 +33,15 @@ public bookingForm:any;
 		email:['',[Validators.email,Validators.required]],
 		phoneNumber:['',[Validators.required,Validators.pattern("[0-9_-]{10,12}")]],
 		note:[''],
-		policyAcceptance:['',[Validators.required]]
+		policyAcceptance:['',[Validators.required]],
+		restaurantName: ['']
 	  })
 	}
 	bookingSubmit(){
-		console.log(this.bookingForm.value);
 		 this._service.postBookingTable(this.bookingForm.value).subscribe(res=>{
 		let resData=JSON.parse(JSON.stringify(res));
-		console.log("success");
+		alert("Quý khách đã đặt bàn thành công!");
+		window.location.reload();
 	})  
 	
 }
