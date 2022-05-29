@@ -5,6 +5,7 @@ export class Booking{
 	name: String;
 	email:String;
 	note: String;
+	restaurantName:String;
 	constructor(){
 		this.adultQuantity=new Number();
 		this.childrenQuantity=new Number();
@@ -12,5 +13,6 @@ export class Booking{
 		this.name="";
 		this.email="";
 		this.note="";
+		this.restaurantName="";
 	}
 }

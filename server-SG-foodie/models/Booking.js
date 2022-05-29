@@ -9,7 +9,7 @@ const BookingSchema = new Schema({
     bookingDate: { type: Date, required: true },
     name: { type: String, required: true },
     email: { type: String, required: true },
-    note: { type: String }
-
-})
+    note: { type: String },
+    restaurantName: { type: String }
+}, { versionKey: false })
 module.exports = mongoose.model("Booking", BookingSchema)
