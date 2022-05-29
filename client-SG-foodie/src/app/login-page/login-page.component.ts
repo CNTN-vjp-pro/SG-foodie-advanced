@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { customValidator, passwordValidator } from '../validators/check.validator';
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css',
-              '../../assets/additional-style/root.css']
+  styleUrls: ['./login-page.component.css', '../../assets/additional-style/root.css'],
+  encapsulation:ViewEncapsulation.None
 })
 export class LoginPageComponent implements OnInit {
 
