@@ -19,9 +19,9 @@ const routes: Routes = [
 	{path:'category/:category',component:CategoricalPageComponent},
   {path:'restaurant/:id',component:RestaurantPageComponent},   
 	{path:'booking-page/:id',component:BookingPageComponent},
-	{path:'**',pathMatch: 'full',component:PageNotFoundComponent}
 	{path:'login', component:LoginPageComponent},
 	{path: 'register', component:RegisterFormComponent},
+	{path:'**',pathMatch: 'full',component:PageNotFoundComponent},
 ];
 
 @NgModule({
@@ -29,5 +29,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent]
+export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent, LoginPageComponent, RegisterFormComponent]
 

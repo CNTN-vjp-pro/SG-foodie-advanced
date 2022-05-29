@@ -110,6 +110,7 @@ router.post('/bookingTable', async(req, res) => {
     } catch (err) {
         res.json({ message: err.message });
     }
+  })
     //Get about us
 router.get('/aboutus', (req, res) => {
     AboutUs.find({})
@@ -123,4 +124,5 @@ router.get('/bookingTable/appointment', async(req, res) => {
         .then(data => { res.json(data) })
         .catch(err => { res.json({ "Error": err.message }) })
 })
+
 module.exports = router
