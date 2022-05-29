@@ -1,5 +1,10 @@
 /* Common */
 
+nav,
+.footer {
+    display: none;
+}
+
 .col {
     float: left;
 }
@@ -31,14 +36,15 @@
     position: relative;
 }
 
+.background-img {
+    width: calc(100% - 450px);
+    position: fixed;
+}
+
 .form-container {
     position: absolute;
-    /* display: inline-block; */
     top: 0px;
-    left: 0;
     right: 0;
-    margin-left: auto;
-    margin-right: auto;
     padding: 20px;
     width: 450px;
     border: 1px solid rgb(204, 204, 204);
@@ -73,4 +79,15 @@
 
 .btn-submit:hover {
     opacity: 0.9;
+}
+
+@media screen and (max-width: 900px) {
+    .background-img {
+        display: none;
+    }
+    .form-container {
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
