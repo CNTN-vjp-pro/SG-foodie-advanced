@@ -104,10 +104,13 @@
                     <input type="time" class="box-checking time-adjust">
                 </div>
                 <div>
-                    <a routerLink="/booking-page/{{restaurant._id}}" target="_blank"> <button class="booknow-button">Đặt ngay</button></a>
+                    <a href="/booking-page/{{restaurant._id}}" target="_blank">
+                        <button type="button" class="booknow-button">Đặt ngay</button>
+                    </a>
                 </div>
             </div>
             <div class="detailed-container">
+
                 <div class="detailed-column">
                     <div class="detailed-row">
                         <p class="detailed-title">Món ăn</p>
