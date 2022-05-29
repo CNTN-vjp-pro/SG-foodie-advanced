@@ -1,12 +1,13 @@
 import { NumberSymbol } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { customValidator, passwordValidator } from '../validators/check.validator';
 
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
-  styleUrls: ['./register-form.component.css']
+  styleUrls: ['./register-form.component.css'],
+  encapsulation:ViewEncapsulation.None
 })
 export class RegisterFormComponent implements OnInit {
 
