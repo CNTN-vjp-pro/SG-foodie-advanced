@@ -18,8 +18,12 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   declarations: [
     AppComponent,
 	RouterComponent,
-  RegisterFormComponent
-
+  RegisterFormComponent,
+  CategoricalPageComponent,
+  PageNotFoundComponent,
+  RestaurantPageComponent,
+  FooterComponent,
+  LoginPageComponent
   ],
   imports: [
     BrowserModule,
