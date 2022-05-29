@@ -40,17 +40,17 @@
                             </select>
                             </div>
                         </div>
-                  </div>
-                <div>
-                    <input type="date" class="box-checking date-adjust">
+                    </div>
+                    <div>
+                        <input type="date" class="box-checking date-adjust">
+                    </div>
+                    <div>
+                        <input type="time" class="box-checking time-adjust">
+                    </div>
+                    <div>
+                        <a routerLink="/booking-page/{{restaurant._id}}" target="_blank"> <button class="booknow-button">Đặt ngay</button></a>
+                    </div>
                 </div>
-                <div>
-                    <input type="time" class="box-checking time-adjust">
-                </div>
-                <div>
-                    <a routerLink="/booking-page/{{restaurant._id}}" target="_blank"> <button class="booknow-button">Đặt ngay</button></a>
-                </div>
-            </div>
             </form>
             <div class="detailed-container">
                 <div class="detailed-column">
@@ -132,7 +132,7 @@
                 </div>
                 <div class="recommend-inside-container" *ngFor="let r of restaurants.slice(0, 5)">
                     <img src="{{r.image[0]}}" alt="{{r.name}}" class="small-image">
-                    <a routerLink="/{{r._id}}" class="recommend-name" target="_blank">
+                    <a routerLink="/restaurant/{{r._id}}" class="recommend-name" target="_blank">
                         <p>{{r.name}}</p>
                     </a>
                     <p class="recommend-content">{{r.short_description}}</p>
