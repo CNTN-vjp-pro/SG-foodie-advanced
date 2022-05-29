@@ -1,68 +1,173 @@
-<!-- <h4 class="sticky-top text-center title bg-warning">Product List</h4>
+<!-- carousel -->
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-3 col-md-4" *ngFor="let r of restaurants">
-            <div class="card hover-shadow mb-3">
-                <div class="d-flex justify-content-between m-2">
-                    <div class="bg-warning d-flex align-items-center justify-content-center shadow-1-strong rounded-2" style="width: 55px; height: 25px;">
-                        <p class="text-white mb-0 small">-25%</p>
-                    </div>
-                    <div class="bg-light rounded-circle d-flex align-items-center justify-content-center shadow-1-strong" style="width: 25px; height: 25px;">
-                        <div class=" text-black">
-                            <i class="fa fa-heart text-danger"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-image ">
-                    <img class="card-img-top" src="{{r.image[0]}}" alt="image"></div>
-                <div class="card-body">
-                    <h6 class="card-title text-truncate">{{r.title}}</h6>
-                    <h6 class="card-text text-danger">${{r.price}}</h6>
-                    <div class="d-flex justify-content-between text-secondary">
-                        <div class="d-flex">
-                            <div class="ms-auto text-warning">
-                                <i class="fa fa-star text-secondary"></i>
-                            </div>
-                        </div>
+<body>
+    <div class="carousel-container">
+        <a class="slick-arrow slick-prev">
+            <i class="fas fa-angle-left"></i>
+        </a>
+        <div class="slick-list">
+            <div class="slick-track">
+                <div id="lastClone" class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
+                    <div>
+                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
+                            <img class="image" src="assets/images/Carousel/carousel_1.png" alt="">
+                        </a>
                     </div>
                 </div>
-                <button class="btn btn-warning text-white m-2">Buy Now</button>
+
+                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
+                    <div>
+                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
+                            <img class="image" src="assets/images/Carousel/carousel_1.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
+                    <div>
+                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
+                            <img class="image" src="assets/images/Carousel/carousel_2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
+                    <div>
+                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
+                            <img class="image" src="assets/images/Carousel/carousel_3.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
+                    <div>
+                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
+                            <img class="image" src="assets/images/Carousel/carousel_4.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
+                    <div>
+                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
+                            <img class="image" src="assets/images/Carousel/carousel_5.png" alt="">
+                        </a>
+                    </div>
+                </div>
+
+                <div id="firstClone" class="slick-slide slick-cloned" data-index="1" tabindex="-1" aria-hidden="true">
+                    <div>
+                        <a href="" aria-label="" tabindex="-1" style="width: 100%; display: inline-block">
+                            <img class="image" src="assets/images/Carousel/carousel_1.png" alt="">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
+        <a class="slick-arrow slick-next">
+            <i class="fas fa-angle-right"></i>
+        </a>
+        <ul class="slick-dots">
+            <li class="slick-active">
+                <button>1</button>
+            </li>
+            <li class="">
+                <button>2</button>
+            </li>
+            <li class="">
+                <button>3</button>
+            </li>
+            <li class="">
+                <button>4</button>
+            </li>
+            <li class="">
+                <button>5</button>
+            </li>
+        </ul>
     </div>
-</div> -->
+    <script src="./js/carousel.js"></script>
+</body>
 
 
+<!-- Search-bar -->
+<div class="body__search-bar" style="margin:35px 0 45px;">
+    <div class="search-bar__title" style="text-align:center;">
+        <h2>Tìm kiếm nhà hàng</h2>
+    </div>
+    <form action="">
+
+        <div class="booking-check" style="width: 85vw; border-radius: 5px; color: #e5e5e5; margin-top: 0; margin-bottom: 10px;">
+            <div class="search-item">
+                <input type="text" name="" id="number-of-cus" placeholder="2 người lớn" class="box-checking" readonly>
+                <img class="icon" src="assets/icon/user.svg" alt="" onclick="toggle_visibility('dropdown')">
+                <div id="dropdown" class="cus-dropdown cus-flex">
+                    <div class="input-group" style="justify-content: space-around;">
+                        <label for="adults" class="maxwidth-option" style="padding-right: 5px; color: #000;">Người lớn:</label>
+                        <select id="adults" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
+                        <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                    </select>
+                    </div>
+                    <div class="input-group" style="justify-content: space-around;">
+                        <label for="childrens" class="maxwidth-option" style="padding-right: 30px; color: #000;">Trẻ em:</label>
+                        <select id="childrens" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <input type="date" class="box-checking date-adjust">
+            </div>
+            <div>
+                <input type="time" class="box-checking time-adjust">
+            </div>
+
+            <div>
+                <input type="typing-box" class="box-checking" placeholder="Địa điểm, nhà hàng, ...">
+                <span class="icon icon-user"><img src="assets/icon/search.svg" alt=""></span>
+            </div>
+            <a class="booknow-button" href=''>Đi ngay</a>
+
+        </div>
+    </form>
+</div>
 
 
+<!-- Restaurant sections -->
 <div class="section" *ngFor="let cat of categories">
     <div class="section__container-header ">
         <h2>{{cat | uppercase}}</h2>
         <div></div>
         <span>
-                <a href="categoricalRestaurants.html?category={{cat}} " target="_blank ">Xem tất cả</a>
-                <i class="material-icons ">chevron_right</i>
+                <a href="category/{{cat}} " target="_blank ">Xem tất cả</a>
+                <i class="fas fa-angle-right"></i>
             </span>
     </div>
     <div class="section__container reveal">
         <div class="section__container-row ">
-            <div class="row__item" *ngFor="let res of restaurants">
-                <div class="row__item-image ">
-                    <img src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} ">
-                </div>
-                <div class="row__item-content ">
-                    <h3>
-                        <a routerLink="/{{res._id}}" target="_blank ">{{res.name}}</a>
-                    </h3>
-                    <p>{{res.short_description}}</p>
-                    <p ng-if="cat=='Ưu đãi' " class="row__item--color ">{{res.discount}}</p>
+            <div class="row__item" *ngFor="let res of restaurants; let i=index">
+                <div *ngIf="i<4">
+                    <div class="row__item-image ">
+                        <img src="{{res.image[0]}} " alt="Unable to load image " title="{{res.name}} ">
+                    </div>
+                    <div class="row__item-content ">
+                        <h3>
+                            <a routerLink="/restaurant/{{res._id}}" target="_blank ">{{res.name}}</a>
+                        </h3>
+                        <p>{{res.short_description}}</p>
+                        <p ng-if="cat=='Ưu đãi' " class="row__item--color ">{{res.discount}}</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- <ul *ngFor="let r of restaurants">
-    <li>{{r.name}}</li>
-</ul> -->
+<a href="# " class="back-to-top">
+    <i class="fas fa-angle-up"></i>
+</a>

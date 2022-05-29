@@ -1,0 +1,116 @@
+/* :root {
+    --main-color-1: #D50805;
+    --main-color-2: #FFBD59;
+} */
+
+
+/* @import url("root.css"); */
+
+@font-face {
+    font-family: NotoSans;
+    src: url(../../assets/font/Noto_Sans/NotoSans-Regular.ttf);
+}
+
+* {
+    font-family: NotoSans;
+}
+
+body {
+    background-color: var(--main-color-white-background);
+}
+
+hr {
+    width: 345px;
+    margin: 0 auto 20px;
+}
+
+form {
+    margin: 55px 0 0;
+    padding: 20px 0;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 450px;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0.5px 0.5px 4px 1px grey;
+    padding-bottom: 30px;
+}
+
+.logo img {
+    width: 170px;
+}
+
+h1,
+#register {
+    color: var(--main-color-red);
+}
+
+.login-btn button {
+    display: inline-flex;
+    /* line-height: 50px; */
+    justify-content: center;
+    width: 345px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.login-btn button span img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.login-btn button span {
+    display: flex;
+    align-self: center;
+}
+
+#btn,
+.login-btn button,
+.input input {
+    border-radius: 5px;
+    border: 0.5px solid gray;
+    background-color: white;
+}
+
+#btn,
+.login-btn button,
+.input input,
+.forgot-pwd {
+    width: 345px;
+    font-size: 16px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+#btn {
+    background-color: var(--main-color-red);
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.input input {
+    width: 337px;
+    height: 34px;
+}
+
+.forgot-pwd {
+    text-align: left;
+    margin-left: 53px;
+}
+
+.forgot-pwd a {
+    color: black;
+}
+
+.title {
+    color: var(--main-color-red);
+}
