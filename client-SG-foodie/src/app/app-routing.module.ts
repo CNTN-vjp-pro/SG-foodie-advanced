@@ -22,7 +22,6 @@ const routes: Routes = [
 	{path:'login', component:LoginPageComponent},
 	{path: 'register', component:RegisterFormComponent},
 	{path:'**',pathMatch: 'full',component:PageNotFoundComponent},
-
 ];
 
 @NgModule({
