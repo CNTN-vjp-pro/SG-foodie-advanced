@@ -33,5 +33,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent, LoginPageComponent, RegisterFormComponent]
+export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent, LoginPageComponent, RegisterFormComponent,UserBookingHistoryComponent]
 

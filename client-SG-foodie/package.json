@@ -26,6 +26,8 @@
         "jquery": "^3.6.0",
         "mongoose": "^6.2.9",
         "morgan": "^1.10.0",
+        "ngx-pipes": "^3.0.0",
+        "ngx-toastr": "^14.3.0",
         "node": "^17.7.2",
         "nodemon": "^2.0.15",
         "rxjs": "~7.5.0",
