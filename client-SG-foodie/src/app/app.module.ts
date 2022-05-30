@@ -13,6 +13,8 @@ import { FooterComponent } from './footer/footer.component';
 // import { BookingProgressbarStep2Component } from './booking-progressbar-step2/booking-progressbar-step2.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserBookingHistoryComponent } from './user-booking-history/user-booking-history.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { RegisterFormComponent } from './register-form/register-form.component';
   PageNotFoundComponent,
   RestaurantPageComponent,
   FooterComponent,
-  LoginPageComponent
+  LoginPageComponent,
+  UserProfileComponent,
+  UserBookingHistoryComponent
   ],
   imports: [
     BrowserModule,
