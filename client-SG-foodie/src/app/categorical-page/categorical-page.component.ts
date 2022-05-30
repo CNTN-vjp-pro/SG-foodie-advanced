@@ -11,7 +11,7 @@ export class CategoricalPageComponent implements OnInit {
   constructor(private _service: FoodieService,private activatedRoute: ActivatedRoute,private router: Router){
 	this.router.routeReuseStrategy.shouldReuseRoute = () => false;
   }
-  categories: string[] = ["Nổi bật", "Ưu đãi", "Văn hóa ẩm thực", "Tinh hoa Việt Nam", "Điểm nhấn quận mình"];
+  categories: string[] = ["Nổi bật", "Ưu đãi", "Văn hóa ẩm thực", "Tinh hoa Việt Nam", "Điểm nhấn quận mình","Kiểu Nhật","Kiểu Trung","Kiểu Âu","Kiểu Hàn"];
   category:any;
   restaurants: any;
   restaurant = new Restaurant();
@@ -30,19 +30,22 @@ bannerSrc:String="";
   ngOnInit(): void {
 	this.activatedRoute.paramMap.subscribe(params => {
       this.category = params.get('category');
-      console.log(this.category);
+	  if(this.categories.includes(this.category)==false){
+          this.router.navigateByUrl('/**');
+	  }
+	  else{
+		this.getBannerSource(this.category);
+		this.getRestaurantsCategory(this.category);
+	  }
     });
-	this.getBannerSource(this.category);
-	this.getRestaurantsCategory(this.category);
+	
   }
   getRestaurantsCategory(category:any){
 	this._service.getRestaurantsListByCategory(category).subscribe((res:any) => {
 		this.restaurants = res;
-		console.log(JSON.stringify(res));
 	 })
   }
   getBannerSource(category:any){
 	  this.bannerSrc=this.banner[category];
   }
- 
 }
