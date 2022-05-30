@@ -30,7 +30,7 @@ router.get('/restaurants/:category', async(req, res) => {
         res.json({ message: err.message })
     }
 })
-router.get('/restaurants/:id', async(req, res) => {
+router.get('/restaurant/:id', async(req, res) => {
     try {
         let restaurant = await Restaurant.findById(req.params.id);
         res.json(restaurant)
