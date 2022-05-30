@@ -34,7 +34,8 @@ public bookingForm:any;
 		phoneNumber:['',[Validators.required,Validators.pattern("[0-9_-]{10,12}")]],
 		note:[''],
 		policyAcceptance:['',[Validators.required]],
-		restaurantName: ['']
+		restaurantName: [''],
+		restaurantAddress: ['']
 	  })
 	}
 	bookingSubmit(){
