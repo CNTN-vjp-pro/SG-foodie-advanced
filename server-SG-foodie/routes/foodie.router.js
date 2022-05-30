@@ -100,7 +100,9 @@ router.post('/bookingTable', async(req, res) => {
             bookingDate: req.body.bookingDate,
             name: req.body.name,
             email: req.body.email,
-            note: req.body.note
+            note: req.body.note,
+            restaurantName: req.body.restaurantName,
+            restaurantAddress: req.body.restaurantAddress
         });
         try {
             const saveBooking = await booking.save();

@@ -1,5 +1,7 @@
 .header-container {
-    width: 498px;
+    /*  width: 498px;
+    height: 150px; */
+    width: 40%;
     height: 150px;
     background-color: var(--main-color-yellow);
 }
@@ -307,4 +309,11 @@ New CSS */
 .form-control:focus {
     border-color: var(--main-color-yellow);
     box-shadow: 0 0 0 0.2rem rgba(220, 229, 40, 0.25);
+}
+
+@media only screen and (max-width: 1100px) {
+    .header-container,
+    .form-container {
+        width: 100%;
+    }
 }
