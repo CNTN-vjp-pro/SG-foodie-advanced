@@ -3,9 +3,6 @@ const router = express.Router()
 
 const Restaurant = require('../models/Restaurant')
 const Policy = require('../models/Policy');
-const Booking = require('../models/Booking');
-const AboutUs = require('../models/AboutUs');
-
 router.get('/', (req, res) => {
     res.send("It's seem ok")
 })
@@ -17,11 +14,14 @@ router.get('/policies', (req, res) => {
         })
 })
 router.get('/restaurants', async(req, res) => {
-    Restaurant.find({})
-        .then(data => { res.json(data) })
-        .catch(err => { res.json({ "Error": err.message }) })
-})
-
+        try {
+            let restaurants = await Restaurant.find();
+            res.json(restaurants)
+        } catch (err) {
+            res.json({ message: err.message })
+        }
+    })
+    //Get restaurant by Category
 router.get('/restaurants/:category', async(req, res) => {
     try {
         let restaurant = await Restaurant.find({ category: req.params.category });
@@ -30,16 +30,14 @@ router.get('/restaurants/:category', async(req, res) => {
         res.json({ message: err.message })
     }
 })
-router.get('/restaurant/:id', async(req, res) => {
+router.get('/restaurants/:id', async(req, res) => {
     try {
         let restaurant = await Restaurant.findById(req.params.id);
         res.json(restaurant)
     } catch (err) {
         res.json({ message: err.message })
     }
-
 })
-
 
 router.post('/restaurant', async(req, res) => {
     const restaurant = new Restaurant({
@@ -120,10 +118,4 @@ router.get('/aboutus', (req, res) => {
             res.json({ "Error:": error.message })
         })
 })
-router.get('/bookingTable/appointment', async(req, res) => {
-    Booking.find({})
-        .then(data => { res.json(data) })
-        .catch(err => { res.json({ "Error": err.message }) })
-})
-
 module.exports = router
