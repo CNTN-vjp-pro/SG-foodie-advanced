@@ -112,10 +112,26 @@ router.post('/bookingTable', async(req, res) => {
     })
     //Get about us
 router.get('/aboutus', (req, res) => {
-    AboutUs.find({})
-        .then(data => { res.json(data) })
-        .catch(error => {
-            res.json({ "Error:": error.message })
-        })
+        AboutUs.find({})
+            .then(data => { res.json(data) })
+            .catch(error => {
+                res.json({ "Error:": error.message })
+            })
+    })
+    //Get booking table
+router.get('/bookingTable/appointment', async(req, res) => {
+        Booking.find({})
+            .then(data => { res.json(data) })
+            .catch(err => { res.json({ "Error": err.message }) })
+    })
+    //Delete booking table
+router.delete('/bookingTable/:id', async(req, res) => {
+    try {
+        const id = req.params.id;
+        await Booking.findByIdAndDelete(id)
+        res.json({ message: "success" })
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 })
 module.exports = router

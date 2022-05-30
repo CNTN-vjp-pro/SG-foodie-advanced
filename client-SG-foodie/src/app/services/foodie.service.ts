@@ -58,12 +58,15 @@ export class FoodieService {
 	postBookingTable(data: Booking){
 		return this._http.post(`${this.rest_API_URL}bookingTable`,data);
 	  }
-	  getBookingTable():Observable<Booking[]>{
+	getBookingTable():Observable<Booking[]>{
 		return this._http.get<Booking[]>(`${this.rest_API_URL}bookingTable/appointment`).pipe(
 		  retry(2),
 		  catchError(this.errorHandler)
 		)
 		}
+	deleteBookingTable(id: any){
+			return this._http.delete(`${this.rest_API_URL}bookingTable/${id}`, id)
+		  }
   getAboutUs():Observable<AboutUs[]>{
     return this._http.get<AboutUs[]>(`${this.rest_API_URL}aboutus`).pipe(
       retry(2),
