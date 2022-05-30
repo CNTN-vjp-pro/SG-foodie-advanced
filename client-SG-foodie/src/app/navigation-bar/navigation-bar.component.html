@@ -28,9 +28,22 @@
         <li><a routerLink="/category/Tinh hoa Việt Nam">Tinh hoa Việt Nam</a></li>
         <li><a routerLink="/category/Điểm nhấn quận mình">Điểm nhấn quận mình</a></li>
         <li>
-            <button type="button" class="buttonLogin " onclick="window.open('/login')">Đăng nhập</button>
+            <div href="profilePage.html" class="btnLoginHover">
+                <img class="userAvatar" src="../../assets/images/userAvatar.png">
+            </div>
+            <ul class="avatarBox">
+                <li><a routerLink="/user-profile">Hồ sơ của tôi</a></li>
+                <li><a routerLink="/user-history-booking">Lịch sử đặt bàn</a></li>
+                <li><a routerLink="/login">Đăng xuất</a></li>
+            </ul>
         </li>
-        <!--   <li>
+        <li>
+            <a href="#" id="language-selection">VN</a>
+        </li>
+        <li>
+            <a href="#" id="language-selection">EN</a>
+      </li>
+        <li>
             <a href="# " id="language-selection " ng-show="lang==='vn' " ng-click="changeLanguage( 'en') ">VN</a>
         </li>
         <li>
