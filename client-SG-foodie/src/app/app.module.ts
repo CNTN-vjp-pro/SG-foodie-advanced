@@ -12,6 +12,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ToastrModule } from 'ngx-toastr';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
+import { AdminCategoricalPageComponent } from './admin-categorical-page/admin-categorical-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +23,7 @@ import { AdminHomePageComponent } from './admin-home-page/admin-home-page.compon
   LoginPageComponent,
   UserProfileComponent,
   AdminHomePageComponent,
+  AdminCategoricalPageComponent,
   ],
   imports: [
     BrowserModule,

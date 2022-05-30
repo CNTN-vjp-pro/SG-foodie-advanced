@@ -1,0 +1,16 @@
+<div>
+    <h2 class="text-center header">Danh sách nhà hàng phân mục {{category}}</h2>
+</div>
+<div class="container">
+    <div class="row fw-bold">
+        <div class="col-1">STT</div>
+        <div class="col-10">Tên nhà hàng</div>
+        <a class="col-1 bi bi-plus-square-fill" routerLink="/admin/edit-restaurant/0" target="_blank"></a>
+    </div>
+    <div class="row" *ngFor="let res of restaurants, let i=index">
+        <div class="col-1">{{i+1}}</div>
+        <div class="col-7 res-name">{{res.name}}</div>
+        <a class='col-2 bi bi-pencil btn-change' routerLink="/admin/edit-restaurant/{{res._id}}" target="_blank">&emsp;Sửa</a>
+        <i class="col-2 bi bi-trash btn-change" (click)="delete(res._id)">&emsp;Xóa</i>
+    </div>
+</div>
