@@ -11,6 +11,8 @@ import{FooterComponent} from './footer/footer.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserBookingHistoryComponent } from './user-booking-history/user-booking-history.component';
 const routes: Routes = [
 	{path:'',redirectTo:'home-page',pathMatch:"full"},
 	{path:'home-page',component:HomePageComponent},
@@ -21,6 +23,8 @@ const routes: Routes = [
 	{path:'booking-page/:id',component:BookingPageComponent},
 	{path:'login', component:LoginPageComponent},
 	{path: 'register', component:RegisterFormComponent},
+	{path: 'user-profile', component:UserProfileComponent},
+	{path: 'user-booking-history', component:UserBookingHistoryComponent},
 	{path:'**',pathMatch: 'full',component:PageNotFoundComponent},
 ];
 
