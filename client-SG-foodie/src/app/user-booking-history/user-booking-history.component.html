@@ -14,11 +14,11 @@
                     <th>Trẻ em</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let booking of booking;let i = index">
+            <tbody *ngFor="let booking of booking;let i = index;">
                 <th class="text-center">{{i+1}}</th>
                 <td>{{booking.restaurantName}}</td>
-                <td>{{booking.restaurantName}}</td>
-                <td class="text-center">{{booking.bookingDate | date:'dd/LL/yyyy - HH:mm'}}</td>
+                <td>{{booking.restaurantAddress}}</td>
+                <td class="text-center">{{booking.bookingDate | date:'dd/LL/yyyy - HH:mm' }}</td>
                 <td class="text-center">{{booking.adultQuantity}}</td>
                 <td class="text-center">{{booking.childrenQuantity}}</td>
             </tbody>
