@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FoodieService } from '../services/foodie.service';
 
 @Component({
   selector: 'app-user-booking-history',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserBookingHistoryComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private _service: FoodieService) { }
+  booking:any;
+  errMsg :any;
+  localNow:any;
   ngOnInit(): void {
+	this._service.getBookingTable().subscribe({
+		next: data => this.booking = data,
+		error: err => this.errMsg = err,
+	  })
   }
 
 }
