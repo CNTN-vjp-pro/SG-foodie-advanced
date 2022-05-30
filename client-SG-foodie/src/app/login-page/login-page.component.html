@@ -1,0 +1,38 @@
+<div id="container">
+    <div>
+        <img src="../../assets/images/login-bg.jpg" alt="" class="background-img">
+    </div>
+    <div class="form-container">
+        <img src="../../assets/images/SGFoodie_LOGO1.png" alt="Logo SG-foodie" class="logo-header">
+        <p class="text-center">SGFoodie sẽ cho bạn khám phá đến những ẩm thực ngon nhất của thành phố. Hãy bắt đầu nào!</p>
+        <button class="btn btn-outline-secondary btn-signup mb-3">
+            <span><img src="../../assets/icon/google.svg" alt="GG-logo" class="logo-social"></span>
+            <span>Đăng nhập với Google</span>
+        </button>
+        <button class="btn btn-outline-secondary btn-signup mb-3">
+            <span><img src="../../assets/icon/facebook-icon.svg" alt="FB-logo" class="logo-social"></span>
+            <span>Đăng nhập với Facebook</span>
+        </button>
+        <hr>
+        <form [formGroup]="regForm">
+            <div class="mb-3 row">
+                <label for="phonenum" class="form-label">Số điện thoại</label>
+                <input type="text" class="form-control" id="phonenum" required formControlName="phonenum" [class.is-invalid]="phonenum.invalid && phonenum.touched">
+                <div *ngIf="phonenum.invalid && phonenum.touched">
+                    <small class="text-danger" *ngIf="phonenum.errors?.['required']">Phone number is invalid</small>
+                    <small class="text-danger" *ngIf="phonenum.errors?.['pattern']">Mobile phone must contain 10 digit</small>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input type="password" class="form-control" id="password" formControlName="pass">
+            </div>
+            <div class="mb-3 text-right">
+                <a href="#">Quên mật khẩu?</a>
+            </div>
+            <div>
+                <button type="submit" class="btn-signup btn-submit">Đăng nhập</button>
+            </div>
+        </form>
+    </div>
+</div>

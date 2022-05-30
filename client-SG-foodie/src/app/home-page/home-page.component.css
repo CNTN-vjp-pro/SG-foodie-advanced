@@ -2,14 +2,20 @@
 body {
     margin: 0;
     padding: 0;
-}
+}*/
 
-html {
-    scroll-behavior: smooth;
+
+/* .body-container {
+    scroll-behavior: smooth;    
 } */
 
 
 /* @import url("root.css"); */
+
+nav,
+.footer {
+    display: block;
+}
 
 .section {
     width: 100%;
@@ -27,6 +33,7 @@ html {
 
 .section__container-header {
     text-align: center;
+    position: relative;
 }
 
 .section__container-header h2 {
@@ -43,8 +50,8 @@ html {
 
 .section__container-header span {
     position: absolute;
-    top: 55px;
-    right: 35px;
+    bottom: 0%;
+    right: 5%;
     color: var(--main-color-red);
 }
 

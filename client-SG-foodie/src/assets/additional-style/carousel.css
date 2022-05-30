@@ -1,0 +1,89 @@
+@import url("root.css");
+.slick-slide img {
+    width: 1442px;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.slick-slide {
+    /* overflow: hidden; */
+}
+
+.carousel-container {
+    max-width: 1442px;
+    width: 100%;
+    margin: 0px auto;
+    overflow: hidden;
+    position: relative;
+    padding-top: 60px;
+}
+
+.slick-track {
+    width: 7210px;
+    display: flex;
+    transition: 0.1s;
+    transform: translateX(-1442px);
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    margin: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0px;
+}
+
+.slick-dots li {
+    margin: 0px 7px;
+}
+
+.slick-dots button {
+    border: none;
+    border-radius: 50%;
+    background: #c3a7a7;
+    color: #c3a7a7;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    outline: none;
+    font-size: 0px;
+    transition: 0.25s;
+}
+
+.slick-arrow {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: #ffecec;
+    top: 45%;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    color: #211616;
+    z-index: 1;
+}
+
+.slick-next {
+    right: 7px;
+}
+
+.slick-prev {
+    left: 7px;
+}
+
+.slick-active button {
+    background: var(--main-color-red);
+}
+
+@media screen and (max-width:768px) {
+    .carousel-container {
+        padding-top: 50px;
+    }
+}

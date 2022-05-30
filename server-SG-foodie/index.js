@@ -16,8 +16,7 @@ app.use(bodyParser.json())
 // use Routes
 const foodieRoutes = require('./routes/foodie.router')
 app.use('/', foodieRoutes)
-
-// const Restaurant = require('./models/Restaurant')
+    // const Restaurant = require('./models/Restaurant')
 
 // app.get('/restaurants', cors(), (req, res) => {
 //     // res.send('first test get method api')

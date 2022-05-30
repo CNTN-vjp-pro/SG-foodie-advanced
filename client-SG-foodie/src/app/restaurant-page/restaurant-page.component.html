@@ -1,0 +1,146 @@
+<div>
+    <div class="search-container">
+        <div class="searchbar-box">
+            <i class="fa-solid fa-magnifying-glass" style="color:white; font-size: 40px;"></i>
+            <input type="text" class="search-box" placeholder="Tìm địa điểm nhà hàng, món ăn...">
+        </div>
+    </div>
+    <div class="mainStyle-container">
+        <div class="infor-container">
+            <div class="restaurant-information">
+                <img src="{{restaurant.image[1]}}" alt="" class="restaurant-image">
+                <p class="restaurant-name">{{restaurant.name}}</p>
+            </div>
+            <form action="" class="form-style">
+                <div class="booking-check" style="width: 100%; color: #e5e5e5; margin-top: 0; margin-bottom: 10px;">
+                    <div class="search-item">
+                        <input type="text" name="" id="number-of-cus" placeholder="2 người lớn" class="box-checking" readonly>
+                        <img class="icon" src="assets/icon/user.svg" alt="" onclick="toggle_visibility('dropdown')">
+                        <div id="dropdown" class="cus-dropdown cus-flex">
+                            <div class="input-group" style="justify-content: space-around;">
+                                <label for="adults" class="maxwidth-option" style="padding-right: 5px; color: #000;">Người lớn:</label>
+                                <select id="adults" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
+                                <option value="0">0</option>
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>
+                                  <option value="3">3</option>
+                                  <option value="4">4</option>
+                                  <option value="5">5</option>
+                            </select>
+                            </div>
+                            <div class="input-group" style="justify-content: space-around;">
+                                <label for="childrens" class="maxwidth-option" style="padding-right: 30px; color: #000;">Trẻ em:</label>
+                                <select id="childrens" onchange="get_value('adults', 'childrens', 'number-of-cus')" class="cus-option">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            </div>
+                        </div>
+                  </div>
+                <div>
+                    <input type="date" class="box-checking date-adjust">
+                </div>
+                <div>
+                    <input type="time" class="box-checking time-adjust">
+                </div>
+                <div>
+                    <a href="/booking-page/{{restaurant._id}}" target="_blank">
+                        <button type="button" class="booknow-button">Đặt ngay</button>
+                    </a>
+                </div>
+            </form>
+            <div class="detailed-container">
+
+                <div class="detailed-column">
+                    <div class="detailed-row">
+                        <p class="detailed-title">Món ăn</p>
+                        <p class="detailed-content">{{restaurant.category[1]}}</p>
+                    </div>
+                    <div class="detailed-row">
+                        <p class="detailed-title">Thực đơn</p>
+                        <a href="{{restaurant.menu}}" target="_blank"><button class="menu-button">Xem thực đơn</button></a>
+                    </div>
+                    <div class="detailed-row">
+                        <p class="detailed-title">Giờ mở cửa</p>
+                        <p class="detailed-content">{{restaurant.time}}</p>
+                    </div>
+                    <div class="detailed-row">
+                        <p class="detailed-title">Khoảng giá</p>
+                        <p class="detailed-content">{{restaurant.price_range}}</p>
+                    </div>
+                    <div class="detailed-row">
+                        <p class="detailed-title">Chế độ ăn đặc biệt</p>
+                        <p class="detailed-content">{{restaurant.special_diet}}</p>
+                    </div>
+                </div>
+
+                <div class="detailed-column">
+                    <div class="detailed-row">
+                        <p class="detailed-title">Địa chỉ</p>
+                        <p class="detailed-content">{{restaurant.address}}</p>
+                    </div>
+                    <div id="map" class="detailed-map">
+                        <iframe src="" width="380" height="250" style="border:0;"></iframe>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="introduce-restaurant">
+                    <p class="introduce-title">GIỚI THIỆU</p>
+                    <p>{{restaurant.description.join("\n")}}</p>
+                </div>
+                <div class="introduce-restaurant">
+                    <p class="introduce-title">MÓN ĂN ĐƯỢC YÊU THÍCH</p>
+                    <p>{{restaurant.best_dishes.join(", ")}}</p>
+                    <br>
+                </div>
+            </div>
+            <hr>
+            <div>
+                <div class="introduce-restaurant">
+                    <p class="introduce-title">BÌNH LUẬN</p>
+                    <div class="feedback-container">
+                        <div>
+                            <p><img src="../../assets/images/chimmy.png" alt="User Image" class="user-image"></p>
+                            <p class="user-name">{{restaurant.cmt[0].user_id}}</p>
+                        </div>
+                        <div>
+                            <p class="user-feedback">{{restaurant.cmt[0].feedback}}</p>
+                        </div>
+                    </div>
+                    <div class="feedback-container">
+                        <div>
+                            <p><img src="../../assets/images/chimmy.png" alt="User Image" class="user-image"></p>
+                            <p class="user-name">{{restaurant.cmt[1].user_id}}</p>
+                        </div>
+                        <div>
+                            <p class="user-feedback">{{restaurant.cmt[1].feedback}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+            <div class="recommend-container">
+                <div class="recommend-header">
+                    <p class="recommend-title"> Có thể bạn thích</p>
+                </div>
+                <div class="recommend-inside-container" *ngFor="let r of restaurants.slice(0, 5)">
+                    <img src="{{r.image[0]}}" alt="{{r.name}}" class="small-image">
+                    <a routerLink="/restaurant/{{r._id}}" class="recommend-name" target="_blank">
+                        <p>{{r.name}}</p>
+                    </a>
+                    <p class="recommend-content">{{r.short_description}}</p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

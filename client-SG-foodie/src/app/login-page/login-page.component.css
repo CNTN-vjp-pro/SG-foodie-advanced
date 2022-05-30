@@ -1,0 +1,97 @@
+/* Common */
+
+nav,
+.footer {
+    display: none;
+}
+
+.col {
+    float: left;
+}
+
+.col-pad-left {
+    padding-left: 8px;
+}
+
+.row {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 8px;
+    padding-right: 8px; */
+}
+
+.col-half {
+    width: 50%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/* Container */
+
+#container {
+    position: relative;
+}
+
+.background-img {
+    width: calc(100% - 450px);
+    position: fixed;
+}
+
+.form-container {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    padding: 20px;
+    width: 450px;
+    border: 1px solid rgb(204, 204, 204);
+}
+
+.logo-header {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
+}
+
+.logo-social {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.btn-signup {
+    width: 100%;
+    /* margin-bottom: 10px; */
+}
+
+.btn-submit {
+    border: none;
+    background-color: #D50805;
+    height: 40px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 3px;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 900px) {
+    .background-img {
+        display: none;
+    }
+    .form-container {
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
