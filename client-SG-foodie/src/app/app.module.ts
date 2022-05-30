@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, RouterComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,6 +29,12 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
 	ToastrModule.forRoot({
 		timeOut:3000,
 		progressBar:true,
