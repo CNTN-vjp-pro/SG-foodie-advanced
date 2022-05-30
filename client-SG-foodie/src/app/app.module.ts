@@ -11,6 +11,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ToastrModule } from 'ngx-toastr';
+import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import { ToastrModule } from 'ngx-toastr';
   FooterComponent,
   LoginPageComponent,
   UserProfileComponent,
+  AdminHomePageComponent,
   ],
   imports: [
     BrowserModule,

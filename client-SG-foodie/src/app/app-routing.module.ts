@@ -13,18 +13,20 @@ import { AboutUsPageComponent } from './about-us-page/about-us-page.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserBookingHistoryComponent } from './user-booking-history/user-booking-history.component';
+import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 const routes: Routes = [
 	{path:'',redirectTo:'home-page',pathMatch:"full"},
 	{path:'home-page',component:HomePageComponent},
 	{path:'security-policy',component: SecurityPolicyPageComponent}, 
 	{path:'about-us',component: AboutUsPageComponent}, 
 	{path:'category/:category',component:CategoricalPageComponent},
-  {path:'restaurant/:id',component:RestaurantPageComponent},   
+  	{path:'restaurant/:id',component:RestaurantPageComponent},   
 	{path:'booking-page/:id',component:BookingPageComponent},
 	{path:'login', component:LoginPageComponent},
 	{path: 'register', component:RegisterFormComponent},
 	{path: 'user-profile', component:UserProfileComponent},
 	{path: 'user-booking-history', component:UserBookingHistoryComponent},
+	{path:'admin/home-page', component:AdminHomePageComponent},
 	{path:'**',pathMatch: 'full',component:PageNotFoundComponent},
 ];
 
@@ -33,5 +35,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent, LoginPageComponent, RegisterFormComponent,UserBookingHistoryComponent]
+export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent, LoginPageComponent, RegisterFormComponent,UserBookingHistoryComponent, AdminHomePageComponent]
 

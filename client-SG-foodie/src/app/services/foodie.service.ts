@@ -36,17 +36,16 @@ export class FoodieService {
     return throwError(() => new Error(err.message))
   }
 
-  postRestaurant(data: Restaurant){
-    let API_URL = `${this.rest_API_URL}restaurant`;
-    return this._http.post(API_URL, JSON.stringify(data))
+  postRestaurant(data: any){
+    return this._http.post(`${this.rest_API_URL}restaurant`, data)
   }
 
   updateRestaurant(id: any, data: any){
-    return this._http.patch(`${this.rest_API_URL}restaurants/${id}`, id, data)
+    return this._http.patch(`${this.rest_API_URL}restaurant/${id}`, data)
   }
 
   deleteRestaurant(id: any){
-    return this._http.delete(`${this.rest_API_URL}restaurants/${id}`, id)
+    return this._http.delete(`${this.rest_API_URL}restaurant/${id}`, id)
   }
   getPolicy():Observable<Policy[]>{
 	return this._http.get<Policy[]>(`${this.rest_API_URL}policies`).pipe(
