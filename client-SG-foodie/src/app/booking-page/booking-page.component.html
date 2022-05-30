@@ -34,15 +34,15 @@
                         <small class="text-danger" *ngIf="bookingForm.controls['name'].errors?.['required']">Họ và tên khách hàng không được để trống</small>
                     </div>
                 </div>
-                <div class="col-md-12 mb-3 ">
-                    <input formControlName="email" id="email" class="form-control " placeholder="Email ">
+                <div class="col-md-12 mb-3">
+                    <input formControlName="email" id="email" class="form-control " placeholder="example@gmail.com">
                     <div *ngIf="bookingForm.controls['email'].invalid && bookingForm.controls['email'].touched">
                         <small class="text-danger" *ngIf="bookingForm.controls['email'].errors?.['required']">Email khách hàng không được để trống</small>
                         <small class="text-danger" *ngIf="bookingForm.controls['email'].errors?.['email']">Vui lòng nhập email hợp lệ</small>
                     </div>
                 </div>
-                <div class="col-md-12 mb-3 ">
-                    <input formControlName="phoneNumber" id="phoneNumber" class="form-control" placeholder="Số điện thoại " [class.is-invalid]="bookingForm.controls['phoneNumber'].invalid &&bookingForm.controls['phoneNumber'].touched">
+                <div class="col-md-12 mb-3">
+                    <input formControlName="phoneNumber" id="phoneNumber" class="form-control" placeholder="+84" [class.is-invalid]="bookingForm.controls['phoneNumber'].invalid &&bookingForm.controls['phoneNumber'].touched">
                     <div *ngIf="bookingForm.controls['phoneNumber'].invalid && bookingForm.controls['phoneNumber'].touched">
                         <small class="text-danger" *ngIf="bookingForm.controls['phoneNumber'].errors?.['required']">Số điện thoại khách hàng không được để trống</small>
                         <small class="text-danger" *ngIf="bookingForm.controls['phoneNumber'].errors?.['pattern']">Vui lòng nhập số điện thoại hợp lệ</small>
@@ -58,7 +58,8 @@
                 <div class="col-md-12 ">
                     <input required formControlName="policyAcceptance" type="checkbox" class="booking-checkbox"><span class="booking-fontsize ">Tôi đã đọc và đồng ý với các điều khoản và điều kiện trên.</span>
                     <input type="text" style="display:none" formControlName="restaurantName" [(ngModel)]="restaurant['name']" readonly>
-                    <div class="col-md-12 ">
+                    <input type="text" style="display:none" formControlName="restaurantAddress" [(ngModel)]="restaurant['address'][0]" readonly>
+                    <div class="col-md-12">
                         <button [disabled]="bookingForm.invalid " type="submit " class="btn btn-warning w-100 fw-bold ">
 						Đặt bàn
 					</button>
