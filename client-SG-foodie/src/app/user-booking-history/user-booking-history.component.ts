@@ -14,20 +14,13 @@ export class UserBookingHistoryComponent implements OnInit {
   localNow:any;
   ngOnInit(): void {
 	  this.getBooking();
-	/* this._service.getBookingTable().subscribe({
-		next: data => this.booking = data,
-		error: err => this.errMsg = err,
-	  }) */
   }
   deleteBooking(id:any){
-	  if(confirm("Are you sure you want to delete this product?")==true){
+	  if(confirm("Bạn chắc chắn muốn hủy đặt bàn tại nhà hàng này?")==true){
 		this._service.deleteBookingTable(id).subscribe(res=>{
 			let resData=JSON.parse(JSON.stringify(res));
 			if(resData.message==='success'){
-				this._toast.warning("Deleted successfully!","Delete",{
-					timeOut:5000,
-					progressBar:false
-				});
+				alert("Hủy đặt bàn thành công!");
 				this.getBooking();
 			}else
 			{
