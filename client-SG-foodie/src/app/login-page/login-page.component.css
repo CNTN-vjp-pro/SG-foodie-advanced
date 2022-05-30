@@ -1,116 +1,97 @@
-/* :root {
-    --main-color-1: #D50805;
-    --main-color-2: #FFBD59;
-} */
+/* Common */
 
-
-/* @import url("root.css"); */
-
-@font-face {
-    font-family: NotoSans;
-    src: url(../../assets/font/Noto_Sans/NotoSans-Regular.ttf);
+nav,
+.footer {
+    display: none;
 }
 
-* {
-    font-family: NotoSans;
+.col {
+    float: left;
 }
 
-body {
-    background-color: var(--main-color-white-background);
+.col-pad-left {
+    padding-left: 8px;
 }
 
-hr {
-    width: 345px;
-    margin: 0 auto 20px;
+.row {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding-left: 8px;
+    padding-right: 8px; */
 }
 
-form {
-    margin: 55px 0 0;
-    padding: 20px 0;
+.col-half {
+    width: 50%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/* Container */
+
+#container {
+    position: relative;
+}
+
+.background-img {
+    width: calc(100% - 450px);
+    position: fixed;
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    padding: 0px 20px 10px;
     width: 450px;
-    background-color: white;
-    text-align: center;
-    box-shadow: 0.5px 0.5px 4px 1px grey;
-    padding-bottom: 30px;
+    border: 1px solid rgb(204, 204, 204);
 }
 
-.logo img {
-    width: 170px;
+.logo-header {
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin: auto;
 }
 
-h1,
-#register {
-    color: var(--main-color-red);
-}
-
-.login-btn button {
-    display: inline-flex;
-    /* line-height: 50px; */
-    justify-content: center;
-    width: 345px;
-    margin-bottom: 20px;
-    background-color: white;
-}
-
-.login-btn button span img {
+.logo-social {
     width: 24px;
+    height: 24px;
     margin-right: 10px;
 }
 
-.login-btn button span {
-    display: flex;
-    align-self: center;
+.btn-signup {
+    width: 100%;
+    /* margin-bottom: 10px; */
 }
 
-#btn,
-.login-btn button,
-.input input {
-    border-radius: 5px;
-    border: 0.5px solid gray;
-    background-color: white;
-}
-
-#btn,
-.login-btn button,
-.input input,
-.forgot-pwd {
-    width: 345px;
-    font-size: 16px;
-    height: 40px;
-    margin-bottom: 20px;
-}
-
-#btn {
-    background-color: var(--main-color-red);
-    color: white;
+.btn-submit {
     border: none;
-    font-weight: bold;
+    background-color: #D50805;
+    height: 40px;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 3px;
 }
 
-button:hover {
-    cursor: pointer;
+.btn-submit:hover {
+    opacity: 0.9;
 }
 
-.input input {
-    width: 337px;
-    height: 34px;
-}
-
-.forgot-pwd {
-    text-align: left;
-    margin-left: 53px;
-}
-
-.forgot-pwd a {
-    color: black;
-}
-
-.title {
-    color: var(--main-color-red);
+@media screen and (max-width: 900px) {
+    .background-img {
+        display: none;
+    }
+    .form-container {
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

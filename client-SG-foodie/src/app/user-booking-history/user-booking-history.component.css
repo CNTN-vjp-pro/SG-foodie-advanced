@@ -1,0 +1,46 @@
+@font-face {
+    font-family: NotoSans;
+    src: url(../../assets/font/Noto_Sans/NotoSans-Regular.ttf);
+}
+
+* {
+    font-family: NotoSans;
+}
+
+#user-profile-container {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+h5 {
+    font-weight: 600;
+}
+
+.heading {
+    height: 100px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#heading-text {
+    line-height: 80px;
+    margin: 0px;
+    border-bottom: 1px #b3b3b3 solid;
+    font-weight: 400;
+}
+
+#infor-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#upcoming {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#recent {
+    margin-bottom: 40px;
+}

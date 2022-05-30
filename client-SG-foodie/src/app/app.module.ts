@@ -4,14 +4,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, RouterComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
 	RouterComponent,
+  RegisterFormComponent,
+  RestaurantPageComponent,
+  FooterComponent,
+  LoginPageComponent,
+  UserProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +35,12 @@ import { environment } from '../environments/environment';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })
+	ToastrModule.forRoot({
+		timeOut:3000,
+		progressBar:true,
+		progressAnimation:"increasing",
+		preventDuplicates:true
+	}),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,29 @@
+<div id="user-profile-container">
+    <div class="heading">
+        <h2 id="heading-text">Lịch sử đặt bàn</h2>
+    </div>
+    <div id="infor-container">
+        <table class="table table-responsive-sm">
+            <thead>
+                <tr class="text-center table-warning">
+                    <th>STT</th>
+                    <th>Tên nhà hàng</th>
+                    <th>Địa chỉ</th>
+                    <th>Thời gian đặt bàn</th>
+                    <th>Người lớn</th>
+                    <th>Trẻ em</th>
+                    <th>Hủy đặt bàn</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let booking of booking;let i = index;">
+                <th class="text-center">{{i+1}}</th>
+                <td>{{booking.restaurantName}}</td>
+                <td>{{booking.restaurantAddress}}</td>
+                <td class="text-center">{{booking.bookingDate | date:'dd/LL/yyyy - HH:mm' }}</td>
+                <td class="text-center">{{booking.adultQuantity}}</td>
+                <td class="text-center">{{booking.childrenQuantity}}</td>
+                <td class="text-center"><i class="bi bi-trash" (click)="deleteBooking(booking._id)"></i></td>
+            </tbody>
+        </table>
+    </div>
+</div>
