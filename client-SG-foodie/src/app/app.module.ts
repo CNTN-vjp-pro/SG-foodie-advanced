@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, RouterComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RestaurantPageComponent } from './restaurant-page/restaurant-page.component';
 import { FooterComponent } from './footer/footer.component';
@@ -11,7 +13,10 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
+import { AdminCategoricalPageComponent } from './admin-categorical-page/admin-categorical-page.component';
+import { AdminEditRestaurantPageComponent } from './admin-edit-restaurant-page/admin-edit-restaurant-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +27,8 @@ import { AdminHomePageComponent } from './admin-home-page/admin-home-page.compon
   LoginPageComponent,
   UserProfileComponent,
   AdminHomePageComponent,
+  AdminCategoricalPageComponent,
+  AdminEditRestaurantPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +36,13 @@ import { AdminHomePageComponent } from './admin-home-page/admin-home-page.compon
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+	BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
 	ToastrModule.forRoot({
 		timeOut:3000,
 		progressBar:true,

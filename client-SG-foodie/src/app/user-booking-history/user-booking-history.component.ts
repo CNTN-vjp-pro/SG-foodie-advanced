@@ -20,7 +20,7 @@ export class UserBookingHistoryComponent implements OnInit {
 		this._service.deleteBookingTable(id).subscribe(res=>{
 			let resData=JSON.parse(JSON.stringify(res));
 			if(resData.message==='success'){
-				alert("Hủy đặt bàn thành công!");
+				this._toast.success("Hủy đặt bàn thành công!","Hủy đặt bàn");
 				this.getBooking();
 			}else
 			{

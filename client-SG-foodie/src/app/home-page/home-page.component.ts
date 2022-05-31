@@ -28,5 +28,7 @@ export class HomePageComponent implements OnInit {
     })
 
   }
-
+  findRestaurantList(restaurants: any[], cat: string): any[] {
+    return restaurants.filter(res => res.category.includes(cat));
+  }
 }

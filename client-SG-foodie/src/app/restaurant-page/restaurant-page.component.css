@@ -17,7 +17,7 @@ body {
 
 .searchbar-box {
     height: 60px;
-    background-color: #D50805;
+    background-color: var( --main-color-red);
     width: 880px;
     border-radius: 8px;
     display: flex;
@@ -109,7 +109,7 @@ body {
 }
 
 .booknow-button {
-    background-color: #D50805;
+    background-color: var( --main-color-red);
     border: none;
     text-decoration: none;
     border-radius: 5px;
@@ -184,7 +184,7 @@ body {
 }
 
 .menu-button:hover {
-    background-color: #D50805;
+    background-color: var( --main-color-red);
     color: #fff;
     border: none;
 }
@@ -247,7 +247,7 @@ body {
 
 .recommend-header {
     height: 48px;
-    background-color: #D50805;
+    background-color: var( --main-color-red);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -281,7 +281,7 @@ body {
 }
 
 .recommend-name:hover {
-    color: #D50805;
+    color: var( --main-color-red);
 }
 
 .recommend-content {
@@ -432,7 +432,7 @@ body {
     }
     .recommend-header {
         height: 48px;
-        background-color: #D50805;
+        background-color: var( --main-color-red);
         text-align: center;
         display: flex;
         justify-content: center;
