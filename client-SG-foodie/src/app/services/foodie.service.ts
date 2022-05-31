@@ -1,7 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AboutUs } from 'interfaces/aboutUs';
 import { IRestaurant } from 'interfaces/restaurants';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { Booking } from '../models/booking';
 import { Policy } from '../models/policy';
 import { Restaurant } from '../models/restaurant';
 
@@ -24,7 +26,7 @@ export class FoodieService {
   }
 
   getResById(_id:any): Observable<IRestaurant[]>{
-    return this._http.get<IRestaurant[]>(`${this.rest_API_URL}${_id}`);
+    return this._http.get<IRestaurant[]>(`${this.rest_API_URL}restaurant/${_id}`);
   }
 
   getRestaurantsListByCategory(category:any){
@@ -34,17 +36,16 @@ export class FoodieService {
     return throwError(() => new Error(err.message))
   }
 
-  postRestaurant(data: Restaurant){
-    let API_URL = `${this.rest_API_URL}restaurant`;
-    return this._http.post(API_URL, JSON.stringify(data))
+  postRestaurant(data: any){
+    return this._http.post(`${this.rest_API_URL}restaurant`, data)
   }
 
   updateRestaurant(id: any, data: any){
-    return this._http.patch(`${this.rest_API_URL}restaurants/${id}`, id, data)
+    return this._http.patch(`${this.rest_API_URL}restaurant/${id}`, data)
   }
 
   deleteRestaurant(id: any){
-    return this._http.delete(`${this.rest_API_URL}restaurants/${id}`, id)
+    return this._http.delete(`${this.rest_API_URL}restaurant/${id}`, id)
   }
   getPolicy():Observable<Policy[]>{
 	return this._http.get<Policy[]>(`${this.rest_API_URL}policies`).pipe(
@@ -52,4 +53,23 @@ export class FoodieService {
 	  catchError(this.errorHandler)
 	)
 	}
+	//Booking
+	postBookingTable(data: Booking){
+		return this._http.post(`${this.rest_API_URL}bookingTable`,data);
+	  }
+	getBookingTable():Observable<Booking[]>{
+		return this._http.get<Booking[]>(`${this.rest_API_URL}bookingTable/appointment`).pipe(
+		  retry(2),
+		  catchError(this.errorHandler)
+		)
+		}
+	deleteBookingTable(id: any){
+			return this._http.delete(`${this.rest_API_URL}bookingTable/${id}`, id)
+		  }
+  getAboutUs():Observable<AboutUs[]>{
+    return this._http.get<AboutUs[]>(`${this.rest_API_URL}aboutus`).pipe(
+      retry(2),
+      catchError(this.errorHandler)
+    )
+  }
 }

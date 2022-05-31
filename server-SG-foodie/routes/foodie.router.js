@@ -14,9 +14,12 @@ router.get('/policies', (req, res) => {
         })
 })
 router.get('/restaurants', async(req, res) => {
-        Restaurant.find({})
-            .then(data => { res.json(data) })
-            .catch(err => { res.json({ "Error": err.message }) })
+        try {
+            let restaurants = await Restaurant.find();
+            res.json(restaurants)
+        } catch (err) {
+            res.json({ message: err.message })
+        }
     })
     //Get restaurant by Category
 router.get('/restaurants/:category', async(req, res) => {
@@ -27,10 +30,10 @@ router.get('/restaurants/:category', async(req, res) => {
         res.json({ message: err.message })
     }
 })
-router.get('/:id', async(req, res) => {
+router.get('/restaurant/:id', async(req, res) => {
     try {
-        let data = await Restaurant.findById(req.params.id);
-        res.json(data)
+        let restaurant = await Restaurant.findById(req.params.id);
+        res.json(restaurant)
     } catch (err) {
         res.json({ message: err.message })
     }
@@ -64,7 +67,7 @@ router.post('/restaurant', async(req, res) => {
     }
 })
 
-router.patch('/restaurants/:id', async(req, res) => {
+router.patch('/restaurant/:id', async(req, res) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
@@ -77,11 +80,55 @@ router.patch('/restaurants/:id', async(req, res) => {
 })
 
 
-router.delete('/restaurants/:id', async(req, res) => {
+router.delete('/restaurant/:id', async(req, res) => {
+        try {
+            const id = req.params.id;
+            await Restaurant.findByIdAndDelete(id)
+
+            res.json({ message: "success" })
+        } catch (err) {
+            res.status(400).json({ message: err.message });
+        }
+    })
+    //Booking table
+router.post('/bookingTable', async(req, res) => {
+        const booking = new Booking({
+            adultQuantity: req.body.adultQuantity,
+            childrenQuantity: req.body.childrenQuantity,
+            bookingDate: req.body.bookingDate,
+            name: req.body.name,
+            email: req.body.email,
+            note: req.body.note,
+            restaurantName: req.body.restaurantName,
+            restaurantAddress: req.body.restaurantAddress
+        });
+        try {
+            const saveBooking = await booking.save();
+            console.log(saveBooking);
+            res.json({ message: "success" });
+        } catch (err) {
+            res.json({ message: err.message });
+        }
+    })
+    //Get about us
+router.get('/aboutus', (req, res) => {
+        AboutUs.find({})
+            .then(data => { res.json(data) })
+            .catch(error => {
+                res.json({ "Error:": error.message })
+            })
+    })
+    //Get booking table
+router.get('/bookingTable/appointment', async(req, res) => {
+        Booking.find({})
+            .then(data => { res.json(data) })
+            .catch(err => { res.json({ "Error": err.message }) })
+    })
+    //Delete booking table
+router.delete('/bookingTable/:id', async(req, res) => {
     try {
         const id = req.params.id;
-        await Restaurant.findByIdAndDelete(id)
-
+        await Booking.findByIdAndDelete(id)
         res.json({ message: "success" })
     } catch (err) {
         res.status(400).json({ message: err.message });

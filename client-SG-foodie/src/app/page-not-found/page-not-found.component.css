@@ -3,6 +3,11 @@ body {
     margin: 0;
 }
 
+nav,
+.footer {
+    display: none;
+}
+
 .notfound {
     font-size: 10em;
 }
