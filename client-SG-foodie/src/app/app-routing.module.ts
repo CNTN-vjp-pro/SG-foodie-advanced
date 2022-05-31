@@ -15,6 +15,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserBookingHistoryComponent } from './user-booking-history/user-booking-history.component';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { AdminCategoricalPageComponent } from './admin-categorical-page/admin-categorical-page.component';
+import { AdminEditRestaurantPageComponent } from './admin-edit-restaurant-page/admin-edit-restaurant-page.component';
 const routes: Routes = [
 	{path:'',redirectTo:'home-page',pathMatch:"full"},
 	{path:'home-page',component:HomePageComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
 	{path: 'user-booking-history', component:UserBookingHistoryComponent},
 	{path:'admin/home-page', component:AdminHomePageComponent},
 	{path:'admin/category/:category',component: AdminCategoricalPageComponent},
+	{path:'admin/edit-restaurant/:id',component:AdminEditRestaurantPageComponent},
 	{path:'**',pathMatch: 'full',component:PageNotFoundComponent},
 ];
 
@@ -37,5 +39,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent, LoginPageComponent, RegisterFormComponent,UserBookingHistoryComponent, AdminHomePageComponent, AdminCategoricalPageComponent]
+export const RouterComponent = [SecurityPolicyPageComponent,HomePageComponent,NavigationBarComponent,CategoricalPageComponent,RestaurantPageComponent,PageNotFoundComponent,AboutUsPageComponent,BookingPageComponent,FooterComponent, LoginPageComponent, RegisterFormComponent,UserBookingHistoryComponent, AdminHomePageComponent, AdminCategoricalPageComponent,AdminEditRestaurantPageComponent]
 
