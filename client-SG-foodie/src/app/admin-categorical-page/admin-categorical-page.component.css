@@ -1,0 +1,32 @@
+.header {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.container {
+    width: 75%;
+    padding-bottom: 60px;
+}
+
+.container>.row:nth-child(even) {
+    background-color: rgb(244 244 248);
+}
+
+.btn-change {
+    text-decoration: none;
+    font-style: normal;
+    color: black;
+    cursor: pointer;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.row {
+    padding: 5px;
+}
+
+.container>.row:nth-child(1) {
+    border-bottom: 1px solid black;
+}
