@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Restaurant } from '../models/restaurant';
 import { FoodieService } from '../services/foodie.service';
+
 
 @Component({
   selector: 'app-admin-edit-restaurant-page',
@@ -82,6 +83,7 @@ export class AdminEditRestaurantPageComponent implements OnInit {
     if(form)
       form.reset();
     this.restaurant  = new Restaurant();
+    
   }
   onChange(event: any){
     if(event.target.files.length > 0){
