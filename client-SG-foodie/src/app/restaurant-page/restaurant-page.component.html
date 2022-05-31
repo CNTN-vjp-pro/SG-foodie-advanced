@@ -135,7 +135,7 @@
                     </div>
                     <div class="recommend-inside-container" *ngFor="let r of restaurants.slice(0, 5)">
                         <img src="{{r.image[0]}}" alt="{{r.name}}" class="small-image">
-                        <a routerLink="/{{r._id}}" class="recommend-name" target="_blank">
+                        <a routerLink="/restaurant/{{r._id}}" class="recommend-name" target="_blank">
                             <p>{{r.name}}</p>
                         </a>
                         <p class="recommend-content">{{r.short_description}}</p>
