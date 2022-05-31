@@ -5,7 +5,8 @@
 
 .container {
     width: 75%;
-    padding-bottom: 80px;
+    margin-bottom: 80px;
+
 }
 
 .container>.row:nth-child(even) {
