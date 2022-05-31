@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { AdminCategoricalPageComponent } from './admin-categorical-page/admin-categorical-page.component';
+import { AdminEditRestaurantPageComponent } from './admin-edit-restaurant-page/admin-edit-restaurant-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { AdminCategoricalPageComponent } from './admin-categorical-page/admin-ca
   UserProfileComponent,
   AdminHomePageComponent,
   AdminCategoricalPageComponent,
+  AdminEditRestaurantPageComponent,
   ],
   imports: [
     BrowserModule,
