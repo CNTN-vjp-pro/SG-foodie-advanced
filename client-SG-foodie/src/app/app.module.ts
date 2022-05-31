@@ -13,6 +13,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AdminHomePageComponent } from './admin-home-page/admin-home-page.component';
 import { AdminCategoricalPageComponent } from './admin-categorical-page/admin-categorical-page.component';
 @NgModule({
@@ -33,6 +34,7 @@ import { AdminCategoricalPageComponent } from './admin-categorical-page/admin-ca
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+	BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
