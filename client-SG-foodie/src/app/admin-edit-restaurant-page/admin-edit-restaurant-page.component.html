@@ -1,12 +1,12 @@
 <div>
     <h2 class="title text-center font-weight-bold">{{title}}</h2>
 </div>
-<form #restaurantForm="ngForm" (ngSubmit)="submitData(restaurantForm)" class="m-5">
-    <input type="hidden" name="_id" ngModel [(ngModel)]="restaurant._id">
+<form [formGroup]="restaurantForm" (ngSubmit)="submitData(restaurantForm.value)" class="m-5">
+    <input type="hidden" name="_id" formControlName="_id">
     <div class="mb-3">
         <label class="font-weight-bold" for="name">Tên nhà hàng:</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên nhà hàng" [(ngModel)]="restaurant.name" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" required>
-        <small *ngIf="name.invalid  && name.touched" class="text-danger">Tên bắt buộc nhập</small>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Nhập tên nhà hàng" formControlName="name" [class.is-invalid]="restaurantForm.controls['name'].invalid && restaurantForm.controls['name'].touched" required>
+        <small *ngIf="restaurantForm.controls['name'].invalid  && restaurantForm.controls['name'].touched" class="text-danger">Tên bắt buộc nhập</small>
     </div>
 
     <div class="mb-3">
@@ -16,62 +16,64 @@
 
     <div class="mb-3">
         <label class="font-weight-bold" for="short_description">Mô tả ngắn về nhà hàng:</label>
-        <input type="text" class="form-control" id="short_description" name="short_description" placeholder="Nhập mô tả ngắn về nhà hàng" [(ngModel)]="restaurant.short_description" #short_description="ngModel" [class.is-invalid]="short_description.invalid && short_description.touched"
+        <input type="text" class="form-control" id="short_description" name="short_description" placeholder="Nhập mô tả ngắn về nhà hàng" formControlName="short_description" [class.is-invalid]="restaurantForm.controls['short_description'].invalid && restaurantForm.controls['short_description'].touched"
             required>
-        <small *ngIf="short_description.invalid  && short_description.touched" class="text-danger">Mô tả ngắn về nhà hàng bắt buộc nhập</small>
+        <small *ngIf="restaurantForm.controls['short_description'].invalid  && restaurantForm.controls['short_description'].touched" class="text-danger">Mô tả ngắn về nhà hàng bắt buộc nhập</small>
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="description">Mô tả nhà hàng:</label>
-        <textarea class="form-control" rows="3" id="description" name="description" placeholder="Nhập mô tả nhà hàng" [(ngModel)]="restaurant.description" #description="ngModel" [class.is-invalid]="description.invalid && description.touched" required></textarea>
-        <small *ngIf="description.invalid  && description.touched" class="text-danger">Mô tả về nhà hàng bắt buộc nhập</small>
+        <textarea class="form-control" rows="3" id="description" name="description" placeholder="Nhập mô tả nhà hàng" formControlName="description" [class.is-invalid]="restaurantForm.controls['description'].invalid && restaurantForm.controls['description'].touched"
+            required></textarea>
+        <small *ngIf="restaurantForm.controls['description'].invalid  && restaurantForm.controls['description'].touched" class="text-danger">Mô tả về nhà hàng bắt buộc nhập</small>
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="category">Phân loại:</label>
         <!-- <input type="text" class="form-control" id="category" name="category" placeholder="Nhập phân loại" [(ngModel)]="restaurant.category" #category="ngModel"> -->
 
-        <select class="selectpicker form-control" id="category" name="category" title="Chọn phân loại nhà hàng" multiple [(ngModel)]="restaurant.category" #category="ngModel" [class.is-invalid]="errFlag && category.touched" (change)="validateCategories(category.value)">
+        <select class="selectpicker form-control" id="category" name="category" title="Chọn phân loại nhà hàng" multiple formControlName="category" [class.is-invalid]="errFlag && restaurantForm.controls['category'].touched" (change)="validateCategories(restaurantForm.controls['category'].value)">
             <option *ngFor="let cat of categories" [ngValue]="cat" >{{cat}}</option>
         </select>
-        <small class="text-danger" *ngIf="errFlag && category.touched">Vui lòng chọn phân loại</small>
+        <small class="text-danger" *ngIf="errFlag && restaurantForm.controls['category'].touched">Vui lòng chọn phân loại</small>
 
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="menu">Đường dẫn đến thực đơn:</label>
-        <input type="text" class="form-control" id="menu" name="menu" placeholder="Nhập đường dẫn đến thực đơn" [(ngModel)]="restaurant.menu" #menu="ngModel" [class.is-invalid]="menu.invalid && menu.touched" required>
-        <small *ngIf="menu.invalid  && menu.touched" class="text-danger">Đường dẫn đến thực đơn bắt buộc nhập</small>
+        <input type="text" class="form-control" id="menu" name="menu" placeholder="Nhập đường dẫn đến thực đơn" formControlName="menu" [class.is-invalid]="restaurantForm.controls['menu'].invalid && restaurantForm.controls['menu'].touched" required>
+        <small *ngIf="restaurantForm.controls['menu'].invalid  && restaurantForm.controls['menu'].touched" class="text-danger">Đường dẫn đến thực đơn bắt buộc nhập</small>
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="time">Giờ mở cửa:</label>
-        <input type="text" class="form-control" id="time" name="time" placeholder="Nhập đường giờ mở cửa" [(ngModel)]="restaurant.time" #time="ngModel" [class.is-invalid]="time.invalid && time.touched" required>
-        <small *ngIf="time.invalid  && time.touched" class="text-danger">Giờ mở cửa bắt buộc nhập</small>
+        <input type="text" class="form-control" id="time" name="time" placeholder="Nhập đường giờ mở cửa" formControlName="time" [class.is-invalid]="restaurantForm.controls['time'].invalid && restaurantForm.controls['time'].touched" required>
+        <small *ngIf="restaurantForm.controls['time'].invalid  && restaurantForm.controls['time'].touched" class="text-danger">Giờ mở cửa bắt buộc nhập</small>
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="price_range">Khoảng giá:</label>
-        <input type="text" class="form-control" id="price_range" name="price_range" placeholder="Nhập khoảng giá" [(ngModel)]="restaurant.price_range" #price_range="ngModel" [class.is-invalid]="price_range.invalid && price_range.touched" required>
-        <small *ngIf="price_range.invalid  && price_range.touched" class="text-danger">Khoảng giá bắt buộc nhập</small>
+        <input type="text" class="form-control" id="price_range" name="price_range" placeholder="Nhập khoảng giá" formControlName="price_range" [class.is-invalid]="restaurantForm.controls['price_range'].invalid && restaurantForm.controls['price_range'].touched"
+            required>
+        <small *ngIf="restaurantForm.controls['price_range'].invalid  && restaurantForm.controls['price_range'].touched" class="text-danger">Khoảng giá bắt buộc nhập</small>
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="special_diet">Chế độ ăn đặt biệt:</label>
-        <input type="text" class="form-control" id="special_diet" name="special_diet" placeholder="Nhập chế độ ăn đặt biệt" [(ngModel)]="restaurant.special_diet" #special_diet="ngModel">
+        <input type="text" class="form-control" id="special_diet" name="special_diet" placeholder="Nhập chế độ ăn đặt biệt" formControlName="special_diet">
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="address">Địa chỉ:</label>
-        <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ" [(ngModel)]="restaurant.address" #address="ngModel" [class.is-invalid]="address.invalid && address.touched" required>
-        <small *ngIf="address.invalid  && address.touched" class="text-danger">Địa chỉ bắt buộc nhập</small>
+        <input type="text" class="form-control" id="address" name="address" placeholder="Nhập địa chỉ" formControlName="address" [class.is-invalid]="restaurantForm.controls['address'].invalid && restaurantForm.controls['address'].touched" required>
+        <small *ngIf="restaurantForm.controls['address'].invalid  && restaurantForm.controls['address'].touched" class="text-danger">Địa chỉ bắt buộc nhập</small>
     </div>
 
     <div class="mb-3">
         <label class="font-weight-bold" for="best_dishes">Món ăn được yêu thích:</label>
-        <input type="text" class="form-control" id="best_dishes" name="best_dishes" placeholder="Nhập món ăn yêu thích và các món ăn cách nhau bởi dấu phẩy" [(ngModel)]="restaurant.best_dishes" #best_dishes="ngModel" [class.is-invalid]="best_dishes.invalid && best_dishes.touched"
+        <input type="text" class="form-control" id="best_dishes" name="best_dishes" placeholder="Nhập món ăn yêu thích và các món ăn cách nhau bởi dấu phẩy" formControlName="best_dishes" [class.is-invalid]="restaurantForm.controls['best_dishes'].invalid && restaurantForm.controls['best_dishes'].touched"
             required>
-        <small *ngIf="best_dishes.invalid  && best_dishes.touched" class="text-danger">Món ăn được yêu thích bắt buộc nhập</small>
+        <small *ngIf="restaurantForm.controls['best_dishes'].invalid  && restaurantForm.controls['best_dishes'].touched" class="text-danger">Món ăn được yêu thích bắt buộc nhập</small>
     </div>
 
     <div class="mb-3 text-end">
@@ -79,4 +81,3 @@
         <button type="reset" class="btn btn-secondary ms-1">Tải lại</button>
     </div>
 </form>
-{{restaurant |json}}

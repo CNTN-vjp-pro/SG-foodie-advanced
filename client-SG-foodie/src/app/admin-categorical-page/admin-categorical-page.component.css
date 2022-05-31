@@ -1,6 +1,7 @@
 .header {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 90px;
+    padding-bottom: 30px;
+    color: var(--main-color-red);
 }
 
 .container {
@@ -29,4 +30,12 @@
 
 .container>.row:nth-child(1) {
     border-bottom: 1px solid black;
+}
+
+.text-add {
+    color: var(--main-color-red);
+}
+
+.text-add a {
+    color: var(--main-color-red);
 }
