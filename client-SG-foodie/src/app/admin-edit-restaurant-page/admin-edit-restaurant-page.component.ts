@@ -103,7 +103,7 @@ export class AdminEditRestaurantPageComponent implements OnInit {
   onChange(event: any){
     if(event.target.files.length > 0){
       this.file = event.target.files[0]
-      console.log("file", this.file)
+      console.log("file", this.restaurantForm.value)
     }
     else{
       this.restaurant.image = null;
