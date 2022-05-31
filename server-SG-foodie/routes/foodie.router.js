@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-
+const Booking = require('../models/Booking');
 const Restaurant = require('../models/Restaurant')
 const Policy = require('../models/Policy');
 router.get('/', (req, res) => {
