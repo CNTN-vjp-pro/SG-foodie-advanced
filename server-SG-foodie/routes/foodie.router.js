@@ -67,7 +67,7 @@ router.post('/restaurant', async(req, res) => {
     }
 })
 
-router.patch('/restaurants/:id', async(req, res) => {
+router.patch('/restaurant/:id', async(req, res) => {
     try {
         const id = req.params.id;
         const updatedData = req.body;
@@ -80,7 +80,7 @@ router.patch('/restaurants/:id', async(req, res) => {
 })
 
 
-router.delete('/restaurants/:id', async(req, res) => {
+router.delete('/restaurant/:id', async(req, res) => {
         try {
             const id = req.params.id;
             await Restaurant.findByIdAndDelete(id)
