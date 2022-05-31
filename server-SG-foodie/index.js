@@ -1,10 +1,14 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const path = require('path');
 
 // connect db
 const db = require('./config/db')
 db.connect()
+
+// path for images
+app.use(express.static(path.join(__dirname, '/images')))
 
 const cors = require('cors')
 app.use(cors())
